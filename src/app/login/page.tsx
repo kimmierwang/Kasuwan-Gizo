@@ -16,11 +16,11 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex w-full justify-center py-10">
-      <div className="w-full max-w-md rounded-2xl border border-emerald-200 bg-emerald-50 p-6 shadow-sm">
+    <div className="flex w-full justify-center py-6 sm:py-10 px-4">
+      <div className="w-full max-w-md rounded-2xl border border-emerald-200 bg-emerald-50 p-5 sm:p-6 shadow-sm">
         <div className="mb-6 text-center">
-          <h1 className="text-3xl font-bold text-emerald-800">Welcome back</h1>
-          <p className="mt-1 text-sm text-emerald-800/80">Login to your account</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-emerald-800">Welcome back</h1>
+          <p className="mt-1 text-xs sm:text-sm text-emerald-800/80">Login to your account</p>
         </div>
 
         <form onSubmit={onSubmit}>
