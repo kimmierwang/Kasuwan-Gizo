@@ -79,10 +79,10 @@ export default function WalletPage() {
 
 function ActionCard({ title, subtitle }: { title: string; subtitle: string }) {
   return (
-    <div className="bg-white border rounded-lg p-4 shadow-sm flex items-start gap-3">
-      <div className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-gray-500">💸</div>
-      <div>
-        <div className="font-medium">{title}</div>
+    <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm flex items-start gap-2 sm:gap-3">
+      <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 flex-shrink-0 text-lg sm:text-xl">💸</div>
+      <div className="min-w-0">
+        <div className="font-medium text-xs sm:text-sm">{title}</div>
         <div className="text-xs text-gray-500">{subtitle}</div>
       </div>
     </div>
