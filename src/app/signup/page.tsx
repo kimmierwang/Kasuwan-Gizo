@@ -112,16 +112,16 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="flex w-full justify-center py-10">
-      <div className="w-full max-w-4xl rounded-2xl border border-emerald-200 bg-emerald-50 p-8 shadow-sm">
+    <div className="flex w-full justify-center py-6 sm:py-10 px-4">
+      <div className="w-full max-w-4xl rounded-2xl border border-emerald-200 bg-emerald-50 p-4 sm:p-8 shadow-sm">
         <div className="mb-6 text-center">
-          <h1 className="text-3xl font-bold text-emerald-800">Join Kasuwan Gizo</h1>
-          <p className="mt-1 text-sm text-emerald-800/80">Create your MSME profile and start connecting with customers</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-emerald-800">Join Kasuwan Gizo</h1>
+          <p className="mt-1 text-xs sm:text-sm text-emerald-800/80">Create your MSME profile and start connecting with customers</p>
         </div>
 
-        <div className="mb-4 flex items-start justify-between gap-4">
-          <p className="text-sm text-emerald-800/90 max-w-xl">Tip: Have photos, a short description and product prices ready to complete your listing faster.</p>
-          <div className="hidden md:block rounded-md bg-white border border-emerald-100 px-3 py-2 text-sm text-emerald-700">Estimated time: 5 min</div>
+        <div className="mb-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+          <p className="text-xs sm:text-sm text-emerald-800/90 max-w-xl">Tip: Have photos, a short description and product prices ready to complete your listing faster.</p>
+          <div className="hidden md:block rounded-md bg-white border border-emerald-100 px-3 py-2 text-xs sm:text-sm text-emerald-700 whitespace-nowrap">Estimated time: 5 min</div>
         </div>
 
         <form onSubmit={onSubmit} noValidate>
