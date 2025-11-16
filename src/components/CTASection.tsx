@@ -33,15 +33,15 @@ export default function CTASection() {
 
   return (
     <section
-      className="relative py-20 px-6 bg-gradient-to-br from-teal-600 to-teal-700 overflow-hidden"
+      className="relative py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-teal-600 to-teal-700 overflow-hidden"
       ref={sectionRef}
     >
-      <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500 rounded-full opacity-10 blur-3xl -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-500 rounded-full opacity-10 blur-3xl translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-48 sm:w-96 h-48 sm:h-96 bg-teal-500 rounded-full opacity-10 blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-48 sm:w-96 h-48 sm:h-96 bg-green-500 rounded-full opacity-10 blur-3xl translate-y-1/2 -translate-x-1/2" />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <h2
-          className={`text-4xl lg:text-5xl font-bold text-white mb-4 transform transition-all duration-700 ${
+          className={`text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 transform transition-all duration-700 ${
             isVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-8'
@@ -53,7 +53,7 @@ export default function CTASection() {
           Ready to Transform Your Business?
         </h2>
         <p
-          className={`text-lg text-white/90 mb-8 transform transition-all duration-700 ${
+          className={`text-sm sm:text-base lg:text-lg text-white/90 mb-6 sm:mb-8 transform transition-all duration-700 px-2 ${
             isVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-8'
@@ -66,9 +66,8 @@ export default function CTASection() {
           platform
         </p>
 
-        
         <div
-          className={`mb-8 transform transition-all duration-700 ${
+          className={`mb-6 sm:mb-8 transform transition-all duration-700 ${
             isVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-8'
@@ -79,13 +78,13 @@ export default function CTASection() {
         >
           <Link
             href="/signup"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-green-600 to-yellow-500 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-full text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-600 to-yellow-500 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-full text-sm sm:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
           >
             Start Your Transformation →
           </Link>
         </div>
         <div
-          className={`flex flex-col sm:flex-row justify-center gap-8 pt-8 border-t border-white/20 transform transition-all duration-700 ${
+          className={`flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 pt-6 sm:pt-8 border-t border-white/20 transform transition-all duration-700 ${
             isVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-8'
@@ -96,8 +95,8 @@ export default function CTASection() {
         >
           {benefits.map((benefit, index) => (
             <div key={index} className="flex items-center justify-center gap-2">
-              <span className="text-green-300 text-xl font-bold">✓</span>
-              <span className="text-white font-medium">{benefit}</span>
+              <span className="text-green-300 text-lg sm:text-xl font-bold">✓</span>
+              <span className="text-white font-medium text-sm sm:text-base">{benefit}</span>
             </div>
           ))}
         </div>
