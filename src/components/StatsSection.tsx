@@ -48,9 +48,9 @@ export default function StatsSection() {
   }, []);
 
   return (
-    <section className="py-20 px-6 bg-white" ref={sectionRef}>
+    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
           {stats.map((stat, index) => (
             <div
               key={index}
@@ -63,13 +63,13 @@ export default function StatsSection() {
                 transitionDelay: isVisible ? `${index * 100}ms` : '0ms',
               }}
             >
-              <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mb-4 hover:scale-110 transition-transform duration-300">
-                <span className="text-2xl">{stat.icon}</span>
+              <div className="w-12 sm:w-16 h-12 sm:h-16 bg-teal-600 rounded-full flex items-center justify-center mb-2 sm:mb-4 hover:scale-110 transition-transform duration-300">
+                <span className="text-lg sm:text-2xl">{stat.icon}</span>
               </div>
-              <div className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
+              <div className="text-xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
+              <div className="text-xs sm:text-sm lg:text-base text-gray-600 font-medium">{stat.label}</div>
             </div>
           ))}
         </div>

@@ -112,76 +112,76 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="flex w-full justify-center py-10">
-      <div className="w-full max-w-4xl rounded-2xl border border-emerald-200 bg-emerald-50 p-8 shadow-sm">
+    <div className="flex w-full justify-center py-6 sm:py-10 px-4">
+      <div className="w-full max-w-4xl rounded-2xl border border-emerald-200 bg-emerald-50 p-4 sm:p-8 shadow-sm">
         <div className="mb-6 text-center">
-          <h1 className="text-3xl font-bold text-emerald-800">Join Kasuwan Gizo</h1>
-          <p className="mt-1 text-sm text-emerald-800/80">Create your MSME profile and start connecting with customers</p>
+          <h1 className="text-2xl sm:text-3xl font-bold text-emerald-800">Join Kasuwan Gizo</h1>
+          <p className="mt-1 text-xs sm:text-sm text-emerald-800/80">Create your MSME profile and start connecting with customers</p>
         </div>
 
-        <div className="mb-4 flex items-start justify-between gap-4">
-          <p className="text-sm text-emerald-800/90 max-w-xl">Tip: Have photos, a short description and product prices ready to complete your listing faster.</p>
-          <div className="hidden md:block rounded-md bg-white border border-emerald-100 px-3 py-2 text-sm text-emerald-700">Estimated time: 5 min</div>
+        <div className="mb-4 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+          <p className="text-xs sm:text-sm text-emerald-800/90 max-w-xl">Tip: Have photos, a short description and product prices ready to complete your listing faster.</p>
+          <div className="hidden md:block rounded-md bg-white border border-emerald-100 px-3 py-2 text-xs sm:text-sm text-emerald-700 whitespace-nowrap">Estimated time: 5 min</div>
         </div>
 
         <form onSubmit={onSubmit} noValidate>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 md:gap-8">
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-800">Business Name *</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Business Name *</label>
               <input
                 type="text"
                 value={values.businessName}
                 onChange={(e) => onChange("businessName", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
                 autoComplete="organization"
               />
-              {errors.businessName && <p className="mt-1 text-sm text-red-600">{errors.businessName}</p>}
+              {errors.businessName && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.businessName}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">Contact Person Name *</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Contact Person Name *</label>
               <input
                 type="text"
                 value={values.contactName}
                 onChange={(e) => onChange("contactName", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
                 autoComplete="name"
               />
-              {errors.contactName && <p className="mt-1 text-sm text-red-600">{errors.contactName}</p>}
+              {errors.contactName && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.contactName}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">Phone Number *</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Phone Number *</label>
               <input
                 type="tel"
                 inputMode="tel"
                 placeholder="+234XXXXXXXXXX"
                 value={values.phone}
                 onChange={(e) => onChange("phone", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
                 autoComplete="tel"
               />
-              {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
+              {errors.phone && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.phone}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">Email Address *</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Email Address *</label>
               <input
                 type="email"
                 value={values.email}
                 onChange={(e) => onChange("email", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
                 autoComplete="email"
               />
-              {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
+              {errors.email && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.email}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">Type of Business *</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Type of Business *</label>
               <select
                 value={values.businessType}
                 onChange={(e) => onChange("businessType", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
               >
                 <option value="">Select business type</option>
                 {businessTypes.map((t) => (
@@ -190,62 +190,62 @@ export default function SignupPage() {
                   </option>
                 ))}
               </select>
-              {errors.businessType && <p className="mt-1 text-sm text-red-600">{errors.businessType}</p>}
+              {errors.businessType && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.businessType}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">Location *</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Location *</label>
               <input
                 type="text"
                 placeholder="City, State"
                 value={values.location}
                 onChange={(e) => onChange("location", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
                 autoComplete="address-level2"
               />
-              {errors.location && <p className="mt-1 text-sm text-red-600">{errors.location}</p>}
+              {errors.location && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.location}</p>}
             </div>
 
-            <div className="md:col-span-2 mt-4">
-              <h2 className="text-base font-semibold text-emerald-900">Social Media Links (Optional)</h2>
-              <p className="text-sm text-emerald-900/80 mt-1">Add links to help customers reach you faster.</p>
+            <div className="md:col-span-2 mt-2 sm:mt-4">
+              <h2 className="text-sm sm:text-base font-semibold text-emerald-900">Social Media Links (Optional)</h2>
+              <p className="text-xs sm:text-sm text-emerald-900/80 mt-1">Add links to help customers reach you faster.</p>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">WhatsApp Number</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">WhatsApp Number</label>
               <input
                 type="tel"
                 inputMode="tel"
                 placeholder="+234XXXXXXXXXX"
                 value={values.whatsapp}
                 onChange={(e) => onChange("whatsapp", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
               />
-              {errors.whatsapp && <p className="mt-1 text-sm text-red-600">{errors.whatsapp}</p>}
+              {errors.whatsapp && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.whatsapp}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">Facebook Profile</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Facebook Profile</label>
               <input
                 type="url"
                 placeholder="https://facebook.com/yourbusiness"
                 value={values.facebook}
                 onChange={(e) => onChange("facebook", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
               />
-              {errors.facebook && <p className="mt-1 text-sm text-red-600">{errors.facebook}</p>}
+              {errors.facebook && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.facebook}</p>}
             </div>
 
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-800">Instagram Handle</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Instagram Handle</label>
               <input
                 type="text"
                 placeholder="@yourbusiness"
                 value={values.instagram}
                 onChange={(e) => onChange("instagram", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
               />
-              {errors.instagram && <p className="mt-1 text-sm text-red-600">{errors.instagram}</p>}
+              {errors.instagram && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.instagram}</p>}
             </div>
           </div>
 
@@ -255,11 +255,11 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full rounded-lg bg-emerald-600 px-4 py-3 font-semibold text-white transition hover:bg-emerald-700 disabled:opacity-60"
+              className="w-full rounded-lg bg-emerald-600 px-4 py-2 sm:py-3 font-semibold text-white text-sm sm:text-base transition hover:bg-emerald-700 disabled:opacity-60"
             >
               {submitting ? "Creating Account..." : "Create Account"}
             </button>
-            <p className="mt-3 text-center text-sm text-gray-700">
+            <p className="mt-3 text-center text-xs sm:text-sm text-gray-700">
               Already have an account?{" "}
               <Link href="/login" className="font-semibold text-emerald-700 hover:underline">Login here</Link>
             </p>

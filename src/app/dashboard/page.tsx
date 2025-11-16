@@ -35,108 +35,108 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-semibold text-gray-900">Dashboard Overview</h2>
-          <p className="text-sm text-gray-500">Welcome back! Here's what's happening with your business today.</p>
+          <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Dashboard Overview</h2>
+          <p className="text-xs sm:text-sm text-gray-500">Welcome back! Here's what's happening with your business today.</p>
         </div>
-        <div className="flex items-center gap-3">
-          <input placeholder="Search products, orders, customers" className="text-gray-500 border rounded-lg px-3 py-2 text-sm w-[340px]" />
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
+          <input placeholder="Search products, orders, customers" className="text-gray-500 border rounded-lg px-3 py-2 text-xs sm:text-sm w-full sm:w-[340px]" />
         <button
-          className="px-4 py-2 bg-white border rounded-lg text-gray-800 active:bg-gray-200 transition-colors"
+          className="px-3 sm:px-4 py-2 bg-white border rounded-lg text-gray-800 active:bg-gray-200 transition-colors text-xs sm:text-sm whitespace-nowrap"
           onClick={() => setShowAddListing(true)}
         >
           + Add Product
         </button>
-          <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-sm text-gray-600">ID</div>
+          <div className="hidden sm:flex w-10 h-10 bg-gray-100 rounded-full flex-col items-center justify-center text-sm text-gray-600">ID</div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4">
         {stats.map((s) => (
-          <div key={s.title} className="bg-white border rounded-lg p-4 shadow-sm">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-sm text-gray-500">{s.title}</div>
-                <div className="text-xl font-semibold text-gray-800">{s.value}</div>
+          <div key={s.title} className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
+            <div className="flex items-center justify-between gap-2">
+              <div className="min-w-0 flex-1">
+                <div className="text-xs sm:text-sm text-gray-500 truncate">{s.title}</div>
+                <div className="text-lg sm:text-xl font-semibold text-gray-800">{s.value}</div>
               </div>
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-gray-50">
-                <span className="text-sm text-gray-400">💠</span>
+              <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg flex items-center justify-center bg-gray-50 flex-shrink-0">
+                <span className="text-xs sm:text-sm text-gray-400">💠</span>
               </div>
             </div>
-            <div className="text-xs text-gray-700 mt-3">{s.change}</div>
+            <div className="text-xs text-gray-700 mt-2">{s.change}</div>
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="lg:col-span-2 bg-white border rounded-lg p-6 shadow-sm">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4">
+        <div className="lg:col-span-2 bg-white border rounded-lg p-4 sm:p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4">
-            <div className="font-semibold text-gray-700">Revenue Trend</div>
+            <div className="font-semibold text-sm sm:text-base text-gray-700">Revenue Trend</div>
           </div>
-          <div className="h-48 rounded-lg bg-gradient-to-r from-indigo-50 to-pink-50 flex items-center justify-center text-gray-400">
-            <div className="text-center">
-              <div className="mb-2">Revenue chart visualization</div>
+          <div className="h-40 sm:h-48 rounded-lg bg-gradient-to-r from-indigo-50 to-pink-50 flex items-center justify-center text-gray-400">
+            <div className="text-center px-4">
+              <div className="mb-2 text-xs sm:text-sm">Revenue chart visualization</div>
               <div className="text-xs">Interactive charts coming soon</div>
             </div>
           </div>
         </div>
 
-        <div className="bg-white border rounded-lg p-4 shadow-sm">
-          <div className="flex items-center justify-between mb-2">
-            <div className="font-semibold text-gray-700">Products</div>
-            <a className="text-sm text-gray-500">View All</a>
+        <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
+          <div className="flex items-center justify-between mb-3">
+            <div className="font-semibold text-sm sm:text-base text-gray-700">Products</div>
+            <a className="text-xs sm:text-sm text-gray-500">View All</a>
           </div>
-          <ul className="space-y-3">
+          <ul className="space-y-2 sm:space-y-3">
             {topProducts.map((p) => (
               <li key={p.name} className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gray-100 rounded-md" />
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gray-100 rounded-md flex-shrink-0" />
                   <div>
-                    <div className="font-medium text-gray-700">{p.name}</div>
+                    <div className="font-medium text-xs sm:text-sm text-gray-700">{p.name}</div>
                     <div className="text-xs text-gray-600">{p.sales} sales</div>
                   </div>
                 </div>
-                <div className="font-semibold text-gray-600">{p.price}</div>
+                <div className="font-semibold text-xs sm:text-sm text-gray-600">{p.price}</div>
               </li>
             ))}
           </ul>
         </div>
       </div>
 
-      <div className="bg-white border rounded-lg p-4 shadow-sm">
-        <div className="flex items-center justify-between mb-4">
-          <div className="font-semibold text-gray-700">Recent Products</div>
-          <button className="text-gray-600 px-3 py-1 border rounded">View All Orders</button>
+      <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm overflow-x-auto">
+        <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+          <div className="font-semibold text-sm sm:text-base text-gray-700">Recent Products</div>
+          <button className="text-gray-600 px-2 sm:px-3 py-1 border rounded text-xs sm:text-sm">View All Orders</button>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-xs sm:text-sm">
             <thead>
               <tr className="text-left text-gray-500">
-                <th className="py-2">Order ID</th>
-                <th className="py-2">Products/Services</th>
-                <th className="py-2">Name</th>
-                <th className="py-2">Amount</th>
-                <th className="py-2">Status</th>
-                <th className="py-2">Time</th>
-                <th className="py-2">Actions</th>
+                <th className="py-2 px-1 sm:px-2">Order ID</th>
+                <th className="py-2 px-1 sm:px-2 hidden sm:table-cell">Products/Services</th>
+                <th className="py-2 px-1 sm:px-2">Name</th>
+                <th className="py-2 px-1 sm:px-2 hidden md:table-cell">Amount</th>
+                <th className="py-2 px-1 sm:px-2">Status</th>
+                <th className="py-2 px-1 sm:px-2 hidden lg:table-cell">Time</th>
+                <th className="py-2 px-1 sm:px-2">Actions</th>
               </tr>
             </thead>
             <tbody>
               {orders.map((o) => (
                 <tr key={o.id} className="border-t">
-                  <td className="py-3 text-blue-600 font-medium">{o.id}</td>
-                  <td className="py-3 text-gray-600">{o.customer}</td>
-                  <td className="py-3 text-gray-600">{o.product}</td>
-                  <td className="py-3 text-gray-600">{o.amount}</td>
-                  <td className="py-3">
-                    <span className={`px-3 py-1 rounded-full text-xs ${
-                      o.status === "completed" ? "bg-green-50 text-green-600" : o.status === "processing" ? "bg-blue-50 text-blue-600" : 
+                  <td className="py-2 sm:py-3 px-1 sm:px-2 text-blue-600 font-medium text-xs sm:text-sm">{o.id}</td>
+                  <td className="py-2 sm:py-3 px-1 sm:px-2 text-gray-600 hidden sm:table-cell text-xs">{o.customer}</td>
+                  <td className="py-2 sm:py-3 px-1 sm:px-2 text-gray-600 text-xs sm:text-sm">{o.product}</td>
+                  <td className="py-2 sm:py-3 px-1 sm:px-2 text-gray-600 hidden md:table-cell">{o.amount}</td>
+                  <td className="py-2 sm:py-3 px-1 sm:px-2">
+                    <span className={`px-2 py-1 rounded-full text-xs ${
+                      o.status === "completed" ? "bg-green-50 text-green-600" : o.status === "processing" ? "bg-blue-50 text-blue-600" :
                       "bg-green-300 text-gray-600"
                     }`}>{o.status}</span>
                   </td>
-                  <td className="py-3 text-gray-500">{o.time}</td>
-                  <td className="py-3 text-gray-400">⋯</td>
+                  <td className="py-2 sm:py-3 px-1 sm:px-2 text-gray-500 hidden lg:table-cell text-xs">{o.time}</td>
+                  <td className="py-2 sm:py-3 px-1 sm:px-2 text-gray-400">⋯</td>
                 </tr>
               ))}
             </tbody>
@@ -144,26 +144,26 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="bg-white border rounded-lg p-6 shadow-sm text-center "onClick={() => setShowAddListing(true)}>
-          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-green-600 to-yellow-600 mx-auto mb-3 flex items-center justify-center text-white">+</div>
-          <div className="font-semibold text-gray-700">Add New Product</div>
-          <div className="text-sm text-gray-500 mb-4">Expand your inventory with new products</div>
-          <button className="px-4 py-2 bg-gradient-to-r from-green-600 to-yellow-600  hover:from-purple-700 hover:to-pink-700 text-white rounded">Add Product</button>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+        <div className="bg-white border rounded-lg p-4 sm:p-6 shadow-sm text-center cursor-pointer hover:shadow-md transition-shadow" onClick={() => setShowAddListing(true)}>
+          <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-gradient-to-r from-green-600 to-yellow-600 mx-auto mb-3 flex items-center justify-center text-white text-xl">+</div>
+          <div className="font-semibold text-sm sm:text-base text-gray-700">Add New Product</div>
+          <div className="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">Expand your inventory with new products</div>
+          <button className="px-3 sm:px-4 py-2 bg-gradient-to-r from-green-600 to-yellow-600 hover:from-purple-700 hover:to-pink-700 text-white rounded text-xs sm:text-sm">Add Product</button>
         </div>
 
-        <div className="bg-white border rounded-lg p-6 shadow-sm text-center cursor-pointer hover:shadow-md transition-shadow" onClick={() => router.push('/campaign')}>
-          <div className="w-12 h-12 rounded-full bg-green-500 mx-auto mb-3 flex items-center justify-center text-white">⚡</div>
-          <div className="font-semibold text-gray-700">Share URL Link</div>
-          <div className="text-sm text-gray-500 mb-4">Copy & Share Unique URL</div>
-          <button className="px-4 py-2 bg-gradient-to-r from-green-600 to-yellow-500 hover:from-purple-700 hover:to-pink-700 text-white rounded">Start Campaign</button>
+        <div className="bg-white border rounded-lg p-4 sm:p-6 shadow-sm text-center cursor-pointer hover:shadow-md transition-shadow" onClick={() => router.push('/campaign')}>
+          <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-green-500 mx-auto mb-3 flex items-center justify-center text-white text-xl">⚡</div>
+          <div className="font-semibold text-sm sm:text-base text-gray-700">Share URL Link</div>
+          <div className="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">Copy & Share Unique URL</div>
+          <button className="px-3 sm:px-4 py-2 bg-gradient-to-r from-green-600 to-yellow-500 hover:from-purple-700 hover:to-pink-700 text-white rounded text-xs sm:text-sm">Start Campaign</button>
         </div>
 
-        <div className="bg-white border rounded-lg p-6 shadow-sm text-center">
-          <div className="w-12 h-12 rounded-full bg-orange-500 mx-auto mb-3 flex items-center justify-center text-white">📊</div>
-          <div className="font-semibold text-gray-700">View Analytics</div>
-          <div className="text-sm text-gray-500 mb-4">Deep dive into your business metrics</div>
-          <button className="px-4 py-2 bg-gradient-to-r from-green-600 to-yellow-500 hover:from-purple-700 hover:to-pink-700 text-white rounded">View Reports</button>
+        <div className="bg-white border rounded-lg p-4 sm:p-6 shadow-sm text-center cursor-pointer hover:shadow-md transition-shadow">
+          <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-orange-500 mx-auto mb-3 flex items-center justify-center text-white text-xl">📊</div>
+          <div className="font-semibold text-sm sm:text-base text-gray-700">View Analytics</div>
+          <div className="text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">Deep dive into your business metrics</div>
+          <button className="px-3 sm:px-4 py-2 bg-gradient-to-r from-green-600 to-yellow-500 hover:from-purple-700 hover:to-pink-700 text-white rounded text-xs sm:text-sm">View Reports</button>
         </div>
       </div>
        <AddListingModal

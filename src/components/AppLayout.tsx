@@ -79,11 +79,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     };
   }, []);
   return (
-    <div className="min-h-screen flex bg-white">
+    <div className="min-h-screen flex flex-col md:flex-row bg-white">
       {showSidebar && <Sidebar />}
       <div className={`flex-1 min-h-screen ${showSidebar ? 'md:ml-64' : ''}`}>
-        { !showSidebar && <Header /> }
-        <main className="p-6">{children}</main>
+        {!showSidebar && <Header />}
+        <main className="p-4 md:p-6 mt-12 md:mt-0">{children}</main>
       </div>
     </div>
   );

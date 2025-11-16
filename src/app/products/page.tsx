@@ -69,64 +69,64 @@ const products = [
 
 export default function ProductsPage() {
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-semibold text-gray-700">Products & Inventory</h1>
-          <p className="text-sm text-gray-500">Manage your product catalog and inventory levels</p>
+          <h1 className="text-xl sm:text-2xl font-semibold text-gray-700">Products & Inventory</h1>
+          <p className="text-xs sm:text-sm text-gray-500">Manage your product catalog and inventory levels</p>
         </div>
         <div className="flex items-center gap-3">
-          <Link href="/products/new" className="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700">
+          <Link href="/products/new" className="px-3 sm:px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 text-xs sm:text-sm whitespace-nowrap">
             + Add Product
           </Link>
         </div>
       </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            <Card
-              title="Total Products"
-              value={<span className="text-gray-700">{products.length}</span>}
-              icon={kpiIcon()}
-            >
-              <div className="text-xs text-gray-700">6</div>
-            </Card>
-            <Card
-              title="Active Products"
-              value={<span className="text-green-500">{products.filter((p) => p.status === "Active").length}</span>}
-              icon={kpiIcon()}
-            >
-              <div className="text-xs text-green-500">Active</div>
-            </Card>
-            <Card
-              title="Low Stock"
-              value={<span className="text-yellow-500">{products.filter((p) => p.stock > 0 && p.stock < 10).length}</span>}
-              icon={kpiIcon()}
-            >
-              <div className="text-xs text-yellow-500">1</div>
-            </Card>
-          </div>
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
+        <Card
+          title="Total Products"
+          value={<span className="text-gray-700">{products.length}</span>}
+          icon={kpiIcon()}
+        >
+          <div className="text-xs text-gray-700">6</div>
+        </Card>
+        <Card
+          title="Active Products"
+          value={<span className="text-green-500">{products.filter((p) => p.status === "Active").length}</span>}
+          icon={kpiIcon()}
+        >
+          <div className="text-xs text-green-500">Active</div>
+        </Card>
+        <Card
+          title="Low Stock"
+          value={<span className="text-yellow-500">{products.filter((p) => p.stock > 0 && p.stock < 10).length}</span>}
+          icon={kpiIcon()}
+        >
+          <div className="text-xs text-yellow-500">1</div>
+        </Card>
+      </div>
 
-      <div className="flex flex-col md:flex-row items-center gap-4">
-        <input placeholder="Search products..." className="flex-1 border rounded-lg px-4 py-2 text-sm text-gray-700" />
-        <select className="border rounded-lg px-6 py-2 text-sm text-gray-800">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+        <input placeholder="Search products..." className="flex-1 border rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm text-gray-700" />
+        <select className="border rounded-lg px-3 sm:px-6 py-2 text-xs sm:text-sm text-gray-800">
           <option>Select</option>
           <option>Newly Added</option>
           <option>Lastly Added</option>
         </select>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
         {products.map((p) => (
-          <article key={p.id} className="bg-white border rounded-lg p-4 shadow-sm">
-            <div className="h-40 rounded-md bg-gray-100 overflow-hidden mb-3">
+          <article key={p.id} className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
+            <div className="h-32 sm:h-40 rounded-md bg-gray-100 overflow-hidden mb-3">
               <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
             </div>
-            <div className="flex items-start justify-between gap-3">
-              <div className="flex-1">
-                <div className="text-sm font-semibold text-gray-700">{p.title}</div>
-                <div className="text-xs text-gray-500">{p.category}</div>
+            <div className="flex items-start justify-between gap-2 sm:gap-3">
+              <div className="flex-1 min-w-0">
+                <div className="text-xs sm:text-sm font-semibold text-gray-700 truncate">{p.title}</div>
+                <div className="text-xs text-gray-500 truncate">{p.category}</div>
               </div>
-              <div>
-                <span className={`px-2 py-1 text-xs rounded-full font-medium ${
+              <div className="flex-shrink-0">
+                <span className={`px-1.5 sm:px-2 py-1 text-xs rounded-full font-medium whitespace-nowrap ${
                   p.status === "Active" ? "bg-green-50 text-green-600" : p.status === "Out of Stock" ? "bg-red-50 text-red-600" : "bg-green-300 text-gray-600"
                 }`}>
                   {p.status}
@@ -135,7 +135,7 @@ export default function ProductsPage() {
             </div>
 
             <div className="mt-3">
-              <div className="text-lg font-semibold text-gray-500">{p.price}</div>
+              <div className="text-base sm:text-lg font-semibold text-gray-500">{p.price}</div>
               <div className="text-xs text-gray-500 mt-1">Stock: {p.stock}</div>
               <div className="text-xs text-gray-400">{p.sold} sold</div>
             </div>
@@ -156,13 +156,13 @@ export default function ProductsPage() {
 
 function Card({ title, value, children, icon }: { title: string; value: React.ReactNode; children?: React.ReactNode; icon?: React.ReactNode; }) {
   return (
-    <div className="bg-white border rounded-lg p-4 shadow-sm flex items-center justify-between gap-3">
-      <div>
-        <div className="text-sm text-gray-500">{title}</div>
-        <div className="text-xl font-semibold">{value}</div>
+    <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm flex items-center justify-between gap-2 sm:gap-3">
+      <div className="min-w-0">
+        <div className="text-xs sm:text-sm text-gray-500 truncate">{title}</div>
+        <div className="text-lg sm:text-xl font-semibold">{value}</div>
         <div className="text-xs text-gray-400 mt-1">{children}</div>
       </div>
-      <div className="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center text-gray-400">📦</div>
+      <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-gray-50 flex items-center justify-center text-gray-400 flex-shrink-0">📦</div>
     </div>
   );
 }

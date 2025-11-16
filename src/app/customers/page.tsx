@@ -37,77 +37,75 @@ export default function CustomersPage(): JSX.Element {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col gap-4">
         <div>
-          <h1 className="text-2xl font-semibold text-gray-800">Customers/Viewers</h1>
-          <p className="text-sm text-gray-500">
+          <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">Customers/Viewers</h1>
+          <p className="text-xs sm:text-sm text-gray-500">
             Manage your customer relationships and communications
           </p>
         </div>
-        <div>
-        </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white border rounded-lg p-4 shadow-sm">
-          <div className="text-sm text-gray-500">Total Customers</div>
-          <div className="text-xl font-semibold text-gray-700">{customers.length}</div>
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
+        <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
+          <div className="text-xs sm:text-sm text-gray-500 truncate">Total Customers</div>
+          <div className="text-lg sm:text-xl font-semibold text-gray-700">{customers.length}</div>
         </div>
-        <div className="bg-white border rounded-lg p-4 shadow-sm">
-          <div className="text-sm text-gray-500">Active Customers</div>
-          <div className="text-xl font-semibold text-gray-700">
+        <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
+          <div className="text-xs sm:text-sm text-gray-500 truncate">Active Customers</div>
+          <div className="text-lg sm:text-xl font-semibold text-gray-700">
             {customers.filter((c) => c.status === "Active").length}
           </div>
         </div>
-        <div className="bg-white border rounded-lg p-4 shadow-sm">
-          <div className="text-sm text-gray-500">New This Month</div>
-          <div className="text-xl font-semibold text-gray-700">0</div>
+        <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
+          <div className="text-xs sm:text-sm text-gray-500 truncate">New This Month</div>
+          <div className="text-lg sm:text-xl font-semibold text-gray-700">0</div>
         </div>
       </div>
 
-      <div className="mt-4">
-        <div className="flex items-center gap-4 mb-4">
+      <div className="mt-2 sm:mt-4">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-4">
           <input
             placeholder="Search customers..."
-            className="flex-1 border rounded-lg px-4 py-2 text-sm text-gray-600"
+            className="flex-1 border rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm text-gray-600"
           />
-          <select className="border rounded-lg px-4 py-2 text-sm text-gray-600">
+          <select className="border rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm text-gray-600">
             <option>All Status</option>
             <option>Active</option>
             <option>Inactive</option>
           </select>
-          <div className="ml-auto flex items-center gap-2">
-            <button className="px-3 py-2 bg-blue-600 text-white rounded text-sm">
+          <div className="flex items-center gap-2 ml-auto">
+            <button className="px-3 py-2 bg-blue-600 text-white rounded text-xs sm:text-sm">
               Filter
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {customers.map((c) => (
-            <div key={c.id} className="bg-white border rounded-lg p-4 shadow-sm">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
+            <div key={c.id} className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center gap-2 sm:gap-3 min-w-0">
                   <div
-                    className={`w-10 h-10 flex items-center justify-center rounded-full text-white font-semibold ${getColor(
+                    className={`w-9 sm:w-10 h-9 sm:h-10 flex items-center justify-center rounded-full text-white font-semibold flex-shrink-0 ${getColor(
                       c.name
                     )}`}
                   >
                     {c.name.charAt(0).toUpperCase()}
                   </div>
-                  <div>
-                    <div className="font-medium text-gray-700">{c.name}</div>
-                    <div className="text-xs text-gray-500">{c.email}</div>
-                    <div className="text-xs text-gray-400">{c.city}</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="font-medium text-xs sm:text-sm text-gray-700 truncate">{c.name}</div>
+                    <div className="text-xs text-gray-500 truncate">{c.email}</div>
+                    <div className="text-xs text-gray-400 truncate">{c.city}</div>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-4 flex items-center gap-3">
-                <button className="px-3 py-2 bg-blue-50 text-blue-600 rounded text-sm">
+              <div className="mt-3 sm:mt-4 flex items-center gap-2 flex-wrap">
+                <button className="px-2 sm:px-3 py-1 sm:py-2 bg-blue-50 text-blue-600 rounded text-xs sm:text-sm flex-1 sm:flex-initial">
                   Message
                 </button>
-                <button className="px-3 py-2 border rounded text-sm text-gray-600 font-semibold">
+                <button className="px-2 sm:px-3 py-1 sm:py-2 border rounded text-xs sm:text-sm text-gray-600 font-semibold flex-1 sm:flex-initial">
                   Viewed
                 </button>
               </div>

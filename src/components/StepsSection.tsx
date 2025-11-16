@@ -49,22 +49,22 @@ export default function StepsSection() {
   }, []);
 
   return (
-    <section className="py-20 px-6 bg-white" ref={sectionRef}>
+    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-3">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3">
             Simple Steps to Success
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600">
             Get your business online in minutes, not days
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-4">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center relative">
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 -right-4 w-8 h-1 bg-gray-300">
+                <div className="hidden md:block absolute top-6 sm:top-8 -right-4 w-8 h-1 bg-gray-300">
                   <span className="absolute -right-3 top-1/2 -translate-y-1/2 text-gray-300 text-2xl">
                     —
                   </span>
@@ -80,16 +80,16 @@ export default function StepsSection() {
                   transitionDelay: isVisible ? `${index * 100}ms` : '0ms',
                 }}
               >
-                <div className="text-sm font-bold text-teal-600 mb-3">
+                <div className="text-xs sm:text-sm font-bold text-teal-600 mb-2 sm:mb-3">
                   {step.number}
                 </div>
-                <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mb-4 hover:scale-110 transition-transform duration-300 cursor-pointer">
-                  <span className="text-2xl">{step.icon}</span>
+                <div className="w-12 sm:w-16 h-12 sm:h-16 bg-teal-600 rounded-full flex items-center justify-center mb-3 sm:mb-4 hover:scale-110 transition-transform duration-300 cursor-pointer">
+                  <span className="text-xl sm:text-2xl">{step.icon}</span>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
+                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 mb-2 sm:mb-3 text-center">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-center text-sm leading-relaxed">
+                <p className="text-gray-600 text-center text-xs sm:text-sm leading-relaxed">
                   {step.description}
                 </p>
               </div>

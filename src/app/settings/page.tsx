@@ -221,32 +221,32 @@ export default function SettingsPage() {
   ];
 
   return (
-    <div className="settings-page bg-gray-50 min-h-screen p-6">
+    <div className="settings-page bg-gray-50 min-h-screen p-4 sm:p-6">
       <div className="max-w-6xl mx-auto">
-        <div className="settings-header mb-12">
-          <h1 className="text-4xl font-bold text-gray-900">Settings & Preferences</h1>
-          <p className="text-gray-600 mt-2 max-w-2xl">
+        <div className="settings-header mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">Settings & Preferences</h1>
+          <p className="text-xs sm:text-sm text-gray-600 mt-2 max-w-2xl">
             Customize your account, business profile, and how you interact with the platform. All changes are saved automatically.
           </p>
         </div>
 
         {saved && (
-          <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 flex items-center gap-2">
+          <div className="mb-6 p-3 sm:p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-xs sm:text-sm flex items-center gap-2">
             <span>✓</span> All changes saved successfully
           </div>
         )}
 
-        <div className="space-y-10">
+        <div className="space-y-8 sm:space-y-10">
           {settingGroups.map((group) => (
             <section key={group.name} className="settings-group">
-              <div className="mb-5 flex items-center gap-3">
+              <div className="mb-4 sm:mb-5 flex items-center gap-3">
                 <div className={`w-1 h-8 rounded-full bg-gradient-to-b ${group.color}`}></div>
                 <div>
-                  <h2 className="text-xl font-semibold text-gray-900">{group.name}</h2>
+                  <h2 className="text-lg sm:text-xl font-semibold text-gray-900">{group.name}</h2>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {group.cards.map((card) => (
                   <button
                     key={card.id}

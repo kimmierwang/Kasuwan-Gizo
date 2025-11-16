@@ -76,21 +76,21 @@ export default function FeaturesSection() {
   }, []);
 
   return (
-    <section className="py-20 px-6 bg-gray-50" ref={sectionRef}>
+    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-gray-50" ref={sectionRef}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-8 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
             Everything Your Business Needs
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto px-2">
             From business profile creation to stakeholder connections, we provide comprehensive tools for MSME growth
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`${feature.bgColor} rounded-2xl p-8 transform transition-all duration-700 hover:shadow-lg hover:scale-105 ${
+              className={`${feature.bgColor} rounded-xl sm:rounded-2xl p-5 sm:p-8 transform transition-all duration-700 hover:shadow-lg hover:scale-105 ${
                 isVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
@@ -100,14 +100,14 @@ export default function FeaturesSection() {
               }}
             >
               <div
-                className={`${feature.iconBgColor} w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300`}
+                className={`${feature.iconBgColor} w-12 sm:w-14 h-12 sm:h-14 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 transition-transform duration-300`}
               >
-                <span className="text-2xl">{feature.icon}</span>
+                <span className="text-xl sm:text-2xl">{feature.icon}</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
                 {feature.title}
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 {feature.description}
               </p>
             </div>
