@@ -221,11 +221,11 @@ export default function SettingsPage() {
   ];
 
   return (
-    <div className="settings-page bg-gray-50 min-h-screen p-6">
+    <div className="settings-page bg-gray-50 min-h-screen p-4 sm:p-6">
       <div className="max-w-6xl mx-auto">
-        <div className="settings-header mb-12">
-          <h1 className="text-4xl font-bold text-gray-900">Settings & Preferences</h1>
-          <p className="text-gray-600 mt-2 max-w-2xl">
+        <div className="settings-header mb-8 sm:mb-12">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">Settings & Preferences</h1>
+          <p className="text-xs sm:text-sm text-gray-600 mt-2 max-w-2xl">
             Customize your account, business profile, and how you interact with the platform. All changes are saved automatically.
           </p>
         </div>
