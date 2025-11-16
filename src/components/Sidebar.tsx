@@ -31,6 +31,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
     { label: "Products & Inventory", href: "/products", icon: "box" },
     { label: "Products Management", href: "/orders", icon: "orders" },
     { label: "Customers", href: "/customers", icon: "users" },
+    { label: "Wallet & Finance", href: "/wallet", icon: "wallet" },
     { label: "Notifications", href: "/notifications", icon: "bell" },
     { label: "Business Profile", href: "/profile", icon: "profile" },
     { label: "Settings", href: "/settings", icon: "settings" },
