@@ -255,11 +255,11 @@ export default function SignupPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full rounded-lg bg-emerald-600 px-4 py-3 font-semibold text-white transition hover:bg-emerald-700 disabled:opacity-60"
+              className="w-full rounded-lg bg-emerald-600 px-4 py-2 sm:py-3 font-semibold text-white text-sm sm:text-base transition hover:bg-emerald-700 disabled:opacity-60"
             >
               {submitting ? "Creating Account..." : "Create Account"}
             </button>
-            <p className="mt-3 text-center text-sm text-gray-700">
+            <p className="mt-3 text-center text-xs sm:text-sm text-gray-700">
               Already have an account?{" "}
               <Link href="/login" className="font-semibold text-emerald-700 hover:underline">Login here</Link>
             </p>
