@@ -37,53 +37,51 @@ export default function CustomersPage(): JSX.Element {
   };
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col gap-4">
         <div>
-          <h1 className="text-2xl font-semibold text-gray-800">Customers/Viewers</h1>
-          <p className="text-sm text-gray-500">
+          <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">Customers/Viewers</h1>
+          <p className="text-xs sm:text-sm text-gray-500">
             Manage your customer relationships and communications
           </p>
         </div>
-        <div>
-        </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-white border rounded-lg p-4 shadow-sm">
-          <div className="text-sm text-gray-500">Total Customers</div>
-          <div className="text-xl font-semibold text-gray-700">{customers.length}</div>
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
+        <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
+          <div className="text-xs sm:text-sm text-gray-500 truncate">Total Customers</div>
+          <div className="text-lg sm:text-xl font-semibold text-gray-700">{customers.length}</div>
         </div>
-        <div className="bg-white border rounded-lg p-4 shadow-sm">
-          <div className="text-sm text-gray-500">Active Customers</div>
-          <div className="text-xl font-semibold text-gray-700">
+        <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
+          <div className="text-xs sm:text-sm text-gray-500 truncate">Active Customers</div>
+          <div className="text-lg sm:text-xl font-semibold text-gray-700">
             {customers.filter((c) => c.status === "Active").length}
           </div>
         </div>
-        <div className="bg-white border rounded-lg p-4 shadow-sm">
-          <div className="text-sm text-gray-500">New This Month</div>
-          <div className="text-xl font-semibold text-gray-700">0</div>
+        <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
+          <div className="text-xs sm:text-sm text-gray-500 truncate">New This Month</div>
+          <div className="text-lg sm:text-xl font-semibold text-gray-700">0</div>
         </div>
       </div>
 
-      <div className="mt-4">
-        <div className="flex items-center gap-4 mb-4">
+      <div className="mt-2 sm:mt-4">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-4">
           <input
             placeholder="Search customers..."
-            className="flex-1 border rounded-lg px-4 py-2 text-sm text-gray-600"
+            className="flex-1 border rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm text-gray-600"
           />
-          <select className="border rounded-lg px-4 py-2 text-sm text-gray-600">
+          <select className="border rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm text-gray-600">
             <option>All Status</option>
             <option>Active</option>
             <option>Inactive</option>
           </select>
-          <div className="ml-auto flex items-center gap-2">
-            <button className="px-3 py-2 bg-blue-600 text-white rounded text-sm">
+          <div className="flex items-center gap-2 ml-auto">
+            <button className="px-3 py-2 bg-blue-600 text-white rounded text-xs sm:text-sm">
               Filter
             </button>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {customers.map((c) => (
             <div key={c.id} className="bg-white border rounded-lg p-4 shadow-sm">
               <div className="flex items-center justify-between">
