@@ -156,13 +156,13 @@ export default function ProductsPage() {
 
 function Card({ title, value, children, icon }: { title: string; value: React.ReactNode; children?: React.ReactNode; icon?: React.ReactNode; }) {
   return (
-    <div className="bg-white border rounded-lg p-4 shadow-sm flex items-center justify-between gap-3">
-      <div>
-        <div className="text-sm text-gray-500">{title}</div>
-        <div className="text-xl font-semibold">{value}</div>
+    <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm flex items-center justify-between gap-2 sm:gap-3">
+      <div className="min-w-0">
+        <div className="text-xs sm:text-sm text-gray-500 truncate">{title}</div>
+        <div className="text-lg sm:text-xl font-semibold">{value}</div>
         <div className="text-xs text-gray-400 mt-1">{children}</div>
       </div>
-      <div className="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center text-gray-400">📦</div>
+      <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-gray-50 flex items-center justify-center text-gray-400 flex-shrink-0">📦</div>
     </div>
   );
 }
