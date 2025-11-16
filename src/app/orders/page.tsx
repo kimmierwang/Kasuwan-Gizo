@@ -44,31 +44,31 @@ export default function OrdersPage() {
         ))}
       </div>
 
-      <div className="bg-white border rounded-lg p-4 shadow-sm">
-        <div className="flex items-center justify-between mb-4">
-          <div className="font-semibold text-gray-700">Recent Products</div>
-          <button className="text-sm px-3 py-1 border rounded text-gray-500">View All</button>
+      <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm overflow-x-auto">
+        <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+          <div className="font-semibold text-sm sm:text-base text-gray-700">Recent Products</div>
+          <button className="text-xs sm:text-sm px-2 sm:px-3 py-1 border rounded text-gray-500">View All</button>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-2 sm:space-y-3">
           {orders.map((o) => (
-            <div key={o.id} className="flex items-center justify-between p-3 border rounded-lg">
-              <div className="flex items-center gap-4">
-                <img src={o.avatar} alt="avatar" className="w-10 h-10 rounded-full" />
-                <div>
-                  <div className="text-sm font-medium text-gray-500">{o.id} <span className="ml-2 text-xs text-gray-500"></span></div>
-                  <div className="text-xs text-gray-500">{o.customer}</div>
-                  <div className="text-xs text-gray-400">{o.email}</div>
+            <div key={o.id} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-2 sm:p-3 border rounded-lg gap-3 sm:gap-0">
+              <div className="flex items-center gap-2 sm:gap-4 min-w-0">
+                <img src={o.avatar} alt="avatar" className="w-8 sm:w-10 h-8 sm:h-10 rounded-full flex-shrink-0" />
+                <div className="min-w-0 flex-1">
+                  <div className="text-xs sm:text-sm font-medium text-gray-500 truncate">{o.id}</div>
+                  <div className="text-xs text-gray-500 truncate">{o.customer}</div>
+                  <div className="text-xs text-gray-400 truncate">{o.email}</div>
                 </div>
               </div>
 
-              <div className="text-sm text-gray-500">
+              <div className="text-xs sm:text-sm text-gray-500 flex items-center justify-between sm:flex-col sm:items-end gap-4">
                 <div>Items <span className="font-medium">{o.items}</span></div>
                 <div>Total <span className="font-medium">{o.total}</span></div>
-                <div className="text-xs text-gray-400">{o.date}</div>
+                <div className="hidden sm:block text-xs text-gray-400">{o.date}</div>
               </div>
 
-              <div className="text-gray-400">⋯</div>
+              <div className="text-gray-400 flex-shrink-0">⋯</div>
             </div>
           ))}
         </div>
