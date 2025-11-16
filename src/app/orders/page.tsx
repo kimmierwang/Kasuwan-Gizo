@@ -15,31 +15,31 @@ export default function OrdersPage() {
   ];
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-semibold text-gray-800">Products Management</h1>
-          <p className="text-sm text-gray-500">Track and manage your Products</p>
+          <h1 className="text-xl sm:text-2xl font-semibold text-gray-800">Products Management</h1>
+          <p className="text-xs sm:text-sm text-gray-500">Track and manage your Products</p>
         </div>
-        <div className="flex items-center gap-3">
-          <input placeholder="Search orders or customers..." className="border rounded-lg px-3 py-2 text-sm w-[340px] text-gray-600" />
-          <select className="border rounded-lg px-4 py-2 text-sm text-gray-600">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
+          <input placeholder="Search orders or customers..." className="border rounded-lg px-3 py-2 text-xs sm:text-sm w-full sm:w-[340px] text-gray-600" />
+          <select className="border rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm text-gray-600">
             <option>All Status</option>
             <option>Pending</option>
             <option>Completed</option>
           </select>
-          <button className="px-3 py-2 bg-blue-600 text-white rounded text-sm">Filter</button>
+          <button className="px-3 py-2 bg-blue-600 text-white rounded text-xs sm:text-sm whitespace-nowrap">Filter</button>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
         {kpis.map((k) => (
-          <div key={k.title} className="bg-white border rounded-lg p-4 shadow-sm flex items-center justify-between">
-            <div>
-              <div className="text-sm text-gray-500">{k.title}</div>
-              <div className="text-xl font-semibold text-gray-600">{k.value}</div>
+          <div key={k.title} className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm flex items-center justify-between gap-2">
+            <div className="min-w-0">
+              <div className="text-xs sm:text-sm text-gray-500 truncate">{k.title}</div>
+              <div className="text-lg sm:text-xl font-semibold text-gray-600">{k.value}</div>
             </div>
-            <div className="w-12 h-12 rounded-lg bg-gray-50 flex items-center justify-center text-gray-400">{k.title === 'Total Orders' ? '📦' : '🔔'}</div>
+            <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-gray-50 flex items-center justify-center text-gray-400 flex-shrink-0">{k.title === 'Total Orders' ? '📦' : '🔔'}</div>
           </div>
         ))}
       </div>
