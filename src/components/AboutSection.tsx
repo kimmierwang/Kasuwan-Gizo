@@ -26,18 +26,18 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section className="py-20 px-6 bg-white" ref={sectionRef}>
+    <section className="py-12 sm:py-20 px-4 sm:px-6 bg-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 items-center">
           <div
-            className={`rounded-3xl overflow-hidden transform transition-all duration-700 ${
+            className={`rounded-2xl sm:rounded-3xl overflow-hidden transform transition-all duration-700 order-2 lg:order-1 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}
             style={{
               transitionDelay: isVisible ? '0ms' : '0ms',
             }}
           >
-            <div className="relative h-96 lg:h-[350px] rounded-3xl overflow-hidden border-8 border-teal-600">
+            <div className="relative h-64 sm:h-96 lg:h-[350px] rounded-2xl sm:rounded-3xl overflow-hidden border-4 sm:border-8 border-teal-600">
               <Image
                 src="/images/image1.png"
                 alt="Team meeting and collaboration"
@@ -47,16 +47,16 @@ export default function AboutSection() {
             </div>
           </div>
           <div
-            className={`transform transition-all duration-700 ${
+            className={`transform transition-all duration-700 order-1 lg:order-2 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
             }`}
             style={{
               transitionDelay: isVisible ? '100ms' : '0ms',
             }}
           >
-            <div className="space-y-6 text-gray-700 leading-relaxed">
+            <div className="space-y-3 sm:space-y-6 text-gray-700 leading-relaxed text-sm sm:text-base">
               <p>
-                <span className="font-bold text-lg">K</span>asuwan Gizo is a Nigerian digital platform built to help small, medium, and micro businesses (MSMEs) gain the online visibility they deserve. We make it easy for local entrepreneurs, service providers, and shop owners to list their products, showcase their services, and share their business details — all in one trusted space where customers can easily find and contact them.
+                <span className="font-bold text-base sm:text-lg">K</span>asuwan Gizo is a Nigerian digital platform built to help small, medium, and micro businesses (MSMEs) gain the online visibility they deserve. We make it easy for local entrepreneurs, service providers, and shop owners to list their products, showcase their services, and share their business details — all in one trusted space where customers can easily find and contact them.
               </p>
 
               <p>
