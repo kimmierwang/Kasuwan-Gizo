@@ -104,39 +104,39 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <div className="bg-white border rounded-lg p-4 shadow-sm">
-        <div className="flex items-center justify-between mb-4">
-          <div className="font-semibold text-gray-700">Recent Products</div>
-          <button className="text-gray-600 px-3 py-1 border rounded">View All Orders</button>
+      <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm overflow-x-auto">
+        <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+          <div className="font-semibold text-sm sm:text-base text-gray-700">Recent Products</div>
+          <button className="text-gray-600 px-2 sm:px-3 py-1 border rounded text-xs sm:text-sm">View All Orders</button>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-xs sm:text-sm">
             <thead>
               <tr className="text-left text-gray-500">
-                <th className="py-2">Order ID</th>
-                <th className="py-2">Products/Services</th>
-                <th className="py-2">Name</th>
-                <th className="py-2">Amount</th>
-                <th className="py-2">Status</th>
-                <th className="py-2">Time</th>
-                <th className="py-2">Actions</th>
+                <th className="py-2 px-1 sm:px-2">Order ID</th>
+                <th className="py-2 px-1 sm:px-2 hidden sm:table-cell">Products/Services</th>
+                <th className="py-2 px-1 sm:px-2">Name</th>
+                <th className="py-2 px-1 sm:px-2 hidden md:table-cell">Amount</th>
+                <th className="py-2 px-1 sm:px-2">Status</th>
+                <th className="py-2 px-1 sm:px-2 hidden lg:table-cell">Time</th>
+                <th className="py-2 px-1 sm:px-2">Actions</th>
               </tr>
             </thead>
             <tbody>
               {orders.map((o) => (
                 <tr key={o.id} className="border-t">
-                  <td className="py-3 text-blue-600 font-medium">{o.id}</td>
-                  <td className="py-3 text-gray-600">{o.customer}</td>
-                  <td className="py-3 text-gray-600">{o.product}</td>
-                  <td className="py-3 text-gray-600">{o.amount}</td>
-                  <td className="py-3">
-                    <span className={`px-3 py-1 rounded-full text-xs ${
-                      o.status === "completed" ? "bg-green-50 text-green-600" : o.status === "processing" ? "bg-blue-50 text-blue-600" : 
+                  <td className="py-2 sm:py-3 px-1 sm:px-2 text-blue-600 font-medium text-xs sm:text-sm">{o.id}</td>
+                  <td className="py-2 sm:py-3 px-1 sm:px-2 text-gray-600 hidden sm:table-cell text-xs">{o.customer}</td>
+                  <td className="py-2 sm:py-3 px-1 sm:px-2 text-gray-600 text-xs sm:text-sm">{o.product}</td>
+                  <td className="py-2 sm:py-3 px-1 sm:px-2 text-gray-600 hidden md:table-cell">{o.amount}</td>
+                  <td className="py-2 sm:py-3 px-1 sm:px-2">
+                    <span className={`px-2 py-1 rounded-full text-xs ${
+                      o.status === "completed" ? "bg-green-50 text-green-600" : o.status === "processing" ? "bg-blue-50 text-blue-600" :
                       "bg-green-300 text-gray-600"
                     }`}>{o.status}</span>
                   </td>
-                  <td className="py-3 text-gray-500">{o.time}</td>
-                  <td className="py-3 text-gray-400">⋯</td>
+                  <td className="py-2 sm:py-3 px-1 sm:px-2 text-gray-500 hidden lg:table-cell text-xs">{o.time}</td>
+                  <td className="py-2 sm:py-3 px-1 sm:px-2 text-gray-400">⋯</td>
                 </tr>
               ))}
             </tbody>
