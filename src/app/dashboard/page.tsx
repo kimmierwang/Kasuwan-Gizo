@@ -69,35 +69,35 @@ export default function DashboardPage() {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div className="lg:col-span-2 bg-white border rounded-lg p-6 shadow-sm">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4">
+        <div className="lg:col-span-2 bg-white border rounded-lg p-4 sm:p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4">
-            <div className="font-semibold text-gray-700">Revenue Trend</div>
+            <div className="font-semibold text-sm sm:text-base text-gray-700">Revenue Trend</div>
           </div>
-          <div className="h-48 rounded-lg bg-gradient-to-r from-indigo-50 to-pink-50 flex items-center justify-center text-gray-400">
-            <div className="text-center">
-              <div className="mb-2">Revenue chart visualization</div>
+          <div className="h-40 sm:h-48 rounded-lg bg-gradient-to-r from-indigo-50 to-pink-50 flex items-center justify-center text-gray-400">
+            <div className="text-center px-4">
+              <div className="mb-2 text-xs sm:text-sm">Revenue chart visualization</div>
               <div className="text-xs">Interactive charts coming soon</div>
             </div>
           </div>
         </div>
 
-        <div className="bg-white border rounded-lg p-4 shadow-sm">
-          <div className="flex items-center justify-between mb-2">
-            <div className="font-semibold text-gray-700">Products</div>
-            <a className="text-sm text-gray-500">View All</a>
+        <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
+          <div className="flex items-center justify-between mb-3">
+            <div className="font-semibold text-sm sm:text-base text-gray-700">Products</div>
+            <a className="text-xs sm:text-sm text-gray-500">View All</a>
           </div>
-          <ul className="space-y-3">
+          <ul className="space-y-2 sm:space-y-3">
             {topProducts.map((p) => (
               <li key={p.name} className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gray-100 rounded-md" />
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gray-100 rounded-md flex-shrink-0" />
                   <div>
-                    <div className="font-medium text-gray-700">{p.name}</div>
+                    <div className="font-medium text-xs sm:text-sm text-gray-700">{p.name}</div>
                     <div className="text-xs text-gray-600">{p.sales} sales</div>
                   </div>
                 </div>
-                <div className="font-semibold text-gray-600">{p.price}</div>
+                <div className="font-semibold text-xs sm:text-sm text-gray-600">{p.price}</div>
               </li>
             ))}
           </ul>
