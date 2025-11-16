@@ -97,12 +97,12 @@ function StatCard({ title, value, color }: { title: string; value: number | stri
   };
 
   return (
-    <div className="bg-white border rounded-lg p-4 shadow-sm flex items-center justify-between">
-      <div>
-        <div className="text-sm text-gray-700">{title}</div>
-        <div className="text-xl font-semibold">{value}</div>
+    <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm flex items-center justify-between gap-2">
+      <div className="min-w-0">
+        <div className="text-xs sm:text-sm text-gray-700 truncate">{title}</div>
+        <div className="text-lg sm:text-xl font-semibold">{value}</div>
       </div>
-      <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${colorMap[color || 'blue']}`}>🔔</div>
+      <div className={`w-10 sm:w-12 h-10 sm:h-12 rounded-lg flex items-center justify-center flex-shrink-0 text-lg sm:text-xl ${colorMap[color || 'blue']}`}>🔔</div>
     </div>
   );
 }
