@@ -125,63 +125,63 @@ export default function SignupPage() {
         </div>
 
         <form onSubmit={onSubmit} noValidate>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+          <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 md:gap-8">
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-800">Business Name *</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Business Name *</label>
               <input
                 type="text"
                 value={values.businessName}
                 onChange={(e) => onChange("businessName", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
                 autoComplete="organization"
               />
-              {errors.businessName && <p className="mt-1 text-sm text-red-600">{errors.businessName}</p>}
+              {errors.businessName && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.businessName}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">Contact Person Name *</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Contact Person Name *</label>
               <input
                 type="text"
                 value={values.contactName}
                 onChange={(e) => onChange("contactName", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
                 autoComplete="name"
               />
-              {errors.contactName && <p className="mt-1 text-sm text-red-600">{errors.contactName}</p>}
+              {errors.contactName && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.contactName}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">Phone Number *</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Phone Number *</label>
               <input
                 type="tel"
                 inputMode="tel"
                 placeholder="+234XXXXXXXXXX"
                 value={values.phone}
                 onChange={(e) => onChange("phone", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
                 autoComplete="tel"
               />
-              {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
+              {errors.phone && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.phone}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">Email Address *</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Email Address *</label>
               <input
                 type="email"
                 value={values.email}
                 onChange={(e) => onChange("email", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
                 autoComplete="email"
               />
-              {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
+              {errors.email && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.email}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">Type of Business *</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Type of Business *</label>
               <select
                 value={values.businessType}
                 onChange={(e) => onChange("businessType", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
               >
                 <option value="">Select business type</option>
                 {businessTypes.map((t) => (
@@ -190,62 +190,62 @@ export default function SignupPage() {
                   </option>
                 ))}
               </select>
-              {errors.businessType && <p className="mt-1 text-sm text-red-600">{errors.businessType}</p>}
+              {errors.businessType && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.businessType}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">Location *</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Location *</label>
               <input
                 type="text"
                 placeholder="City, State"
                 value={values.location}
                 onChange={(e) => onChange("location", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
                 autoComplete="address-level2"
               />
-              {errors.location && <p className="mt-1 text-sm text-red-600">{errors.location}</p>}
+              {errors.location && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.location}</p>}
             </div>
 
-            <div className="md:col-span-2 mt-4">
-              <h2 className="text-base font-semibold text-emerald-900">Social Media Links (Optional)</h2>
-              <p className="text-sm text-emerald-900/80 mt-1">Add links to help customers reach you faster.</p>
+            <div className="md:col-span-2 mt-2 sm:mt-4">
+              <h2 className="text-sm sm:text-base font-semibold text-emerald-900">Social Media Links (Optional)</h2>
+              <p className="text-xs sm:text-sm text-emerald-900/80 mt-1">Add links to help customers reach you faster.</p>
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">WhatsApp Number</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">WhatsApp Number</label>
               <input
                 type="tel"
                 inputMode="tel"
                 placeholder="+234XXXXXXXXXX"
                 value={values.whatsapp}
                 onChange={(e) => onChange("whatsapp", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
               />
-              {errors.whatsapp && <p className="mt-1 text-sm text-red-600">{errors.whatsapp}</p>}
+              {errors.whatsapp && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.whatsapp}</p>}
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-gray-800">Facebook Profile</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Facebook Profile</label>
               <input
                 type="url"
                 placeholder="https://facebook.com/yourbusiness"
                 value={values.facebook}
                 onChange={(e) => onChange("facebook", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
               />
-              {errors.facebook && <p className="mt-1 text-sm text-red-600">{errors.facebook}</p>}
+              {errors.facebook && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.facebook}</p>}
             </div>
 
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-800">Instagram Handle</label>
+              <label className="block text-xs sm:text-sm font-medium text-gray-800">Instagram Handle</label>
               <input
                 type="text"
                 placeholder="@yourbusiness"
                 value={values.instagram}
                 onChange={(e) => onChange("instagram", e.target.value)}
-                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                className="mt-1 w-full rounded-lg border border-emerald-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
               />
-              {errors.instagram && <p className="mt-1 text-sm text-red-600">{errors.instagram}</p>}
+              {errors.instagram && <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.instagram}</p>}
             </div>
           </div>
 
