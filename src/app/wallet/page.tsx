@@ -9,13 +9,13 @@ const transactions = [
 export default function WalletPage() {
   return (
     <div className="space-y-4 sm:space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div>
-          <h1 className="text-xl sm:text-2xl font-semibold">Wallet & Finance</h1>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+        <div className="flex-1">
+          <h1 className="text-lg sm:text-2xl font-semibold">Wallet & Finance</h1>
           <p className="text-xs sm:text-sm text-gray-500">Manage your earnings and financial transactions</p>
         </div>
-        <div>
-          <button className="px-4 py-2 bg-green-600 text-white rounded-lg shadow text-xs sm:text-sm whitespace-nowrap">Withdraw Funds</button>
+        <div className="flex-shrink-0">
+          <button className="px-4 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition text-xs sm:text-sm whitespace-nowrap font-medium">Withdraw Funds</button>
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
