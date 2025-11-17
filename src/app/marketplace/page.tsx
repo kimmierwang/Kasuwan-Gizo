@@ -480,28 +480,31 @@ export default function MarketplacePage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
           {products.map((p) => (
-            <article key={p.id} className="bg-white border border-gray-100 rounded-lg shadow-sm overflow-hidden">
-              <div className="relative h-44 bg-gray-50">
-                {p.badge && <div className="absolute left-3 top-3 bg-red-500 text-white text-xs px-2 py-1 rounded-md">{p.badge}</div>}
+            <article key={p.id} className="bg-white border border-gray-100 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+              <div className="relative h-32 sm:h-40 lg:h-44 bg-gray-50">
+                {p.badge && <div className="absolute left-2 sm:left-3 top-2 sm:top-3 bg-red-500 text-white text-xs px-2 py-1 rounded-md font-medium">{p.badge}</div>}
                 <img src={p.image} alt={p.title}  className="object-cover w-full h-full" />
               </div>
-              <div className="p-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-8 h-8 bg-emerald-50 text-emerald-700 rounded-full flex items-center justify-center text-sm font-semibold">{p.business.split(' ').map(s=>s[0]).join('').slice(0,2)}</div>
-                  <div className="text-sm text-gray-600">{p.business} <span className="text-xs text-gray-400 block">{p.location}</span></div>
+              <div className="p-3 sm:p-4">
+                <div className="flex items-center gap-2 sm:gap-3 mb-2 min-w-0">
+                  <div className="w-7 sm:w-8 h-7 sm:h-8 bg-emerald-50 text-emerald-700 rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold flex-shrink-0">{p.business.split(' ').map(s=>s[0]).join('').slice(0,2)}</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-xs sm:text-sm text-gray-600 truncate">{p.business}</div>
+                    <div className="text-xs text-gray-400 truncate">{p.location}</div>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-2">{p.title}</h3>
-                <div className="flex items-center justify-between mb-3">
-                  <div>
-                    <div className="text-sm text-amber-500">{'★'.repeat(Math.round(p.rating))}</div>
+                <h3 className="font-semibold text-sm sm:text-base text-gray-900 mb-2 line-clamp-2">{p.title}</h3>
+                <div className="flex items-start justify-between gap-2 mb-3">
+                  <div className="min-w-0">
+                    <div className="text-xs sm:text-sm text-amber-500">{'★'.repeat(Math.round(p.rating))}</div>
                     <div className="text-xs text-gray-500">{p.rating} ({p.reviews})</div>
                   </div>
-                  <div className="text-lg font-bold text-gray-900">{p.price}</div>
+                  <div className="text-base sm:text-lg font-bold text-gray-900 flex-shrink-0">{p.price}</div>
                 </div>
                 <div className="flex gap-2">
-                  <Link href="#" className="flex-1 text-center bg-emerald-600 text-white rounded-md px-3 py-2 text-sm">Contact Business</Link>
+                  <Link href="#" className="flex-1 text-center bg-emerald-600 text-white hover:bg-emerald-700 rounded-md px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium transition">Contact</Link>
                 </div>
               </div>
             </article>
