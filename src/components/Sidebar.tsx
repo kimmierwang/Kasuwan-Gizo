@@ -44,10 +44,10 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
   return (
     <>
       {/* Mobile Menu Button */}
-      <div className="md:hidden fixed top-4 left-4 z-50">
+      <div className="md:hidden fixed top-3 sm:top-4 left-3 sm:left-4 z-50">
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="p-2 rounded-lg bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 transition"
+          className="p-2 sm:p-2.5 rounded-lg bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 transition active:scale-95"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <RiCloseLine size={24} /> : <RiMenuLine size={24} />}
@@ -59,13 +59,14 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
         <div
           className="md:hidden fixed inset-0 bg-black/50 z-30 top-0"
           onClick={() => setMobileOpen(false)}
+          aria-hidden="true"
         />
       )}
 
       {/* Sidebar */}
-      <aside className={`fixed top-0 left-0 h-screen w-64 bg-white border-r border-gray-100 flex-col overflow-y-auto z-40 transition-transform duration-300 ${
+      <aside className={`fixed top-0 left-0 h-screen w-64 bg-white border-r border-gray-100 flex flex-col overflow-y-auto z-40 transition-transform duration-300 ${
         mobileOpen ? 'translate-x-0' : '-translate-x-full'
-      } md:translate-x-0 md:flex hidden md:block`}>
+      } md:translate-x-0 md:static md:translate-x-0`}>
         <div className="px-4 py-6">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-white">
