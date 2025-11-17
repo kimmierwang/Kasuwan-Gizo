@@ -57,28 +57,28 @@ export default function NotificationsPage() {
       </div>
 
       <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
-        <div className="mb-4 flex items-center gap-2 flex-wrap">
+        <div className="mb-4 flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 flex-wrap">
           {categories.map((c) => (
-            <button key={c} className="px-2 sm:px-3 py-1 border rounded-full text-xs sm:text-sm text-gray-600">{c}</button>
+            <button key={c} className="px-3 py-1 sm:py-1.5 border rounded-full text-xs sm:text-sm text-gray-600 hover:bg-gray-50 transition whitespace-nowrap font-medium flex-shrink-0">{c}</button>
           ))}
         </div>
 
         <div className="space-y-2 sm:space-y-3">
           {notifications.map((n) => (
-            <div key={n.id} className="border rounded-lg p-3 sm:p-4">
+            <div key={n.id} className="border rounded-lg p-3 sm:p-4 hover:bg-gray-50 transition cursor-pointer">
               <div className="flex items-start justify-between gap-2 sm:gap-4">
-                <div className="flex items-start gap-2 sm:gap-3 min-w-0">
+                <div className="flex items-start gap-2 sm:gap-3 min-w-0 flex-1">
                   <div className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full mt-1 flex-shrink-0 ${n.severity === 'High' ? 'bg-red-500' : n.severity === 'Medium' ? 'bg-yellow-400' : 'bg-green-400'}`} />
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-2">
-                      <div className="font-medium text-xs sm:text-sm text-gray-700 truncate">{n.title}</div>
+                      <div className="font-medium text-xs sm:text-sm text-gray-900 truncate">{n.title}</div>
                     </div>
                     <div className="text-xs sm:text-sm text-gray-600 mt-1 line-clamp-2">{n.body}</div>
                     <div className="text-xs text-gray-400 mt-2">{n.time}</div>
                   </div>
                 </div>
 
-                <div className="text-xs sm:text-sm text-gray-400 flex-shrink-0">→</div>
+                <button className="text-xs sm:text-sm text-gray-400 hover:text-gray-600 flex-shrink-0 py-1 px-2 hover:bg-gray-100 rounded transition">→</button>
               </div>
             </div>
           ))}
