@@ -442,19 +442,19 @@ export default function MarketplacePage() {
           </div>
         </div>
       </section>
-      <div className="max-w-7xl mx-auto px-6 -mt-6">
-        <div className="bg-white rounded-lg p-4 shadow-sm">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div className="flex-1">
-              <div className="flex flex-wrap gap-3 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 -mt-4 sm:-mt-6">
+        <div className="bg-white rounded-lg p-3 sm:p-4 shadow-sm overflow-x-auto">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+            <div className="flex-1 min-w-0">
+              <div className="flex gap-2 items-center overflow-x-auto pb-2 sm:pb-0 sm:flex-wrap">
                 {categories.map((c, i) => (
-                  <button key={c} className={`text-sm ${i===0? 'bg-emerald-600 text-white': 'bg-gray-100 text-gray-700'} px-3 py-2 rounded-full`}>{c}</button>
+                  <button key={c} className={`text-xs sm:text-sm whitespace-nowrap ${i===0? 'bg-emerald-600 text-white': 'bg-gray-100 text-gray-700'} px-2 sm:px-3 py-1 sm:py-2 rounded-full transition hover:shadow-sm flex-shrink-0`}>{c}</button>
                 ))}
               </div>
             </div>
-            <div>
+            <div className="w-full sm:w-auto flex-shrink-0">
               <label className="sr-only">Location</label>
-              <select className="border border-gray-200 rounded-lg px-3 py-2">
+              <select className="border border-gray-200 rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm w-full sm:w-auto">
                 <option>All Locations</option>
                 <option>Nigeria</option>
                 <option>Kenya</option>
