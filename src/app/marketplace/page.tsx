@@ -467,12 +467,12 @@ export default function MarketplacePage() {
       </div>
 
       
-      <main className="max-w-7xl mx-auto px-6 py-10">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-lg font-semibold">8 Products Found</h2>
-          <div className="flex items-center gap-3">
-            <label className="text-sm text-gray-600">Sort by:</label>
-            <select className="border border-gray-200 rounded-lg px-3 py-2 text-sm">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-4 sm:mb-6">
+          <h2 className="text-base sm:text-lg font-semibold text-gray-900">8 Products Found</h2>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
+            <label className="text-xs sm:text-sm text-gray-600 hidden sm:block">Sort by:</label>
+            <select className="border border-gray-200 rounded-lg px-2 sm:px-3 py-2 text-xs sm:text-sm bg-white hover:border-gray-300 transition">
               <option>Most Popular</option>
               <option>Newest</option>
               <option>Price: Low to High</option>
