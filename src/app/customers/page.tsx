@@ -81,9 +81,9 @@ export default function CustomersPage(): JSX.Element {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
           {customers.map((c) => (
-            <div key={c.id} className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <div key={c.id} className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm hover:shadow-md transition-shadow">
+              <div className="flex items-start justify-between gap-2">
+                <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
                   <div
                     className={`w-9 sm:w-10 h-9 sm:h-10 flex items-center justify-center rounded-full text-white font-semibold flex-shrink-0 ${getColor(
                       c.name
@@ -100,10 +100,10 @@ export default function CustomersPage(): JSX.Element {
               </div>
 
               <div className="mt-3 sm:mt-4 flex items-center gap-2 flex-wrap">
-                <button className="px-2 sm:px-3 py-1 sm:py-2 bg-blue-50 text-blue-600 rounded text-xs sm:text-sm flex-1 sm:flex-initial">
+                <button className="px-3 py-2 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded text-xs sm:text-sm font-medium transition flex-1">
                   Message
                 </button>
-                <button className="px-2 sm:px-3 py-1 sm:py-2 border rounded text-xs sm:text-sm text-gray-600 font-semibold flex-1 sm:flex-initial">
+                <button className="px-3 py-2 border rounded text-xs sm:text-sm text-gray-600 hover:bg-gray-50 font-medium transition flex-1">
                   Viewed
                 </button>
               </div>
