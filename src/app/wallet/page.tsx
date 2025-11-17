@@ -44,30 +44,31 @@ export default function WalletPage() {
         <ActionCard title="Settings" subtitle="Payment methods" />
         <ActionCard title="Support" subtitle="Get help" />
       </div>
-      <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm overflow-x-auto">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-2 mb-4 flex-wrap">
-          <div className="font-semibold text-sm sm:text-base">Transaction History</div>
-          <div className="flex items-center gap-2 flex-wrap">
-            <select className="border rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm">
+      <div className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 mb-4">
+          <div className="font-semibold text-sm sm:text-base text-gray-900">Transaction History</div>
+          <div className="flex items-center gap-2 flex-wrap w-full sm:w-auto">
+            <select className="border rounded-lg px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm bg-white hover:border-gray-300 transition flex-1 sm:flex-initial">
               <option>Last 7 days</option>
               <option>Last 30 days</option>
               <option>Last 90 days</option>
             </select>
-            <button className="px-3 py-1 sm:py-2 border rounded text-xs sm:text-sm">Export</button>
+            <button className="px-3 py-1 sm:py-2 border rounded text-xs sm:text-sm hover:bg-gray-50 transition whitespace-nowrap">Export</button>
           </div>
         </div>
 
         <div className="space-y-2 sm:space-y-3">
           {transactions.map((t) => (
-            <div key={t.id} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-2 sm:p-3 border rounded-lg gap-2">
-              <div className="min-w-0">
-                <div className="text-xs sm:text-sm font-medium truncate">{t.title} <span className="ml-2 text-xs text-gray-500">{t.id}</span></div>
-                <div className="text-xs text-gray-400">{t.status}</div>
+            <div key={t.id} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 border rounded-lg gap-2 sm:gap-4 hover:bg-gray-50 transition">
+              <div className="min-w-0 flex-1">
+                <div className="text-xs sm:text-sm font-medium text-gray-900 truncate">{t.title}</div>
+                <div className="text-xs text-gray-500 mt-1">{t.id}</div>
+                <div className="text-xs text-gray-400 mt-1">{t.status}</div>
               </div>
 
               <div className="text-right flex-shrink-0">
-                <div className={`font-semibold text-xs sm:text-sm ${t.type === 'credit' ? 'text-green-600' : 'text-red-600'}`}>{t.amount}</div>
-                <div className="text-xs text-gray-400">{t.date}</div>
+                <div className={`font-semibold text-sm ${t.type === 'credit' ? 'text-green-600' : 'text-red-600'}`}>{t.amount}</div>
+                <div className="text-xs text-gray-400 mt-1">{t.date}</div>
               </div>
             </div>
           ))}
