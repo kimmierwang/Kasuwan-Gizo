@@ -88,7 +88,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                 pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href + "/"));
 
               const classes =
-                `group flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ` +
+                `group flex items-center gap-3 px-4 py-3 rounded-lg text-xs sm:text-sm font-medium transition-all active:scale-95 ` +
                 (isActive
                   ? "bg-gradient-to-r from-green-600 to-yellow-500 hover:from-purple-700 hover:to-pink-700 text-white shadow-sm"
                   : "text-gray-700 hover:bg-gray-50");
@@ -97,17 +97,17 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                 <li key={item.label}>
                   {forceFullNav ? (
                     <a href={item.href} className={classes} onClick={handleMobileNavClick}>
-                      <span className="w-5 h-5 text-gray-500 group-hover:text-gray-700 flex items-center justify-center">
+                      <span className="w-5 h-5 text-gray-500 group-hover:text-gray-700 flex items-center justify-center flex-shrink-0">
                         {getIcon(item.icon)}
                       </span>
-                      <span className="flex-1">{item.label}</span>
+                      <span className="flex-1 truncate">{item.label}</span>
                     </a>
                   ) : (
                     <Link href={item.href} className={classes} onClick={handleMobileNavClick}>
-                      <span className="w-6 h-6 text-gray-500 group-hover:text-gray-700 flex items-center justify-center">
+                      <span className="w-5 h-5 text-gray-500 group-hover:text-gray-700 flex items-center justify-center flex-shrink-0">
                         {getIcon(item.icon)}
                       </span>
-                      <span className="flex-1">{item.label}</span>
+                      <span className="flex-1 truncate">{item.label}</span>
                     </Link>
                   )}
                 </li>
