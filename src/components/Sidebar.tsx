@@ -117,11 +117,11 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
         </nav>
 
         <div className="px-4 py-4 border-t border-gray-100">
-          <div className="flex items-center gap-3">
-            <img src={avatar} alt="avatar" className="w-10 h-10 rounded-full object-cover" />
-            <div>
-              <div className="text-sm font-semibold text-gray-700">John Doe</div>
-              <div className="text-xs text-gray-500">Business Owner</div>
+          <div className="flex items-center gap-3 min-w-0">
+            <img src={avatar} alt="avatar" className="w-10 h-10 rounded-full object-cover flex-shrink-0" />
+            <div className="min-w-0 flex-1">
+              <div className="text-xs sm:text-sm font-semibold text-gray-700 truncate">John Doe</div>
+              <div className="text-xs text-gray-500 truncate">Business Owner</div>
             </div>
           </div>
         </div>
