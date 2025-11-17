@@ -36,20 +36,20 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-4 sm:space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="flex flex-col gap-3 sm:gap-4">
         <div>
-          <h2 className="text-xl sm:text-2xl font-semibold text-gray-900">Dashboard Overview</h2>
+          <h2 className="text-lg sm:text-2xl font-semibold text-gray-900">Dashboard Overview</h2>
           <p className="text-xs sm:text-sm text-gray-500">Welcome back! Here's what's happening with your business today.</p>
         </div>
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
-          <input placeholder="Search products, orders, customers" className="text-gray-500 border rounded-lg px-3 py-2 text-xs sm:text-sm w-full sm:w-[340px]" />
-        <button
-          className="px-3 sm:px-4 py-2 bg-white border rounded-lg text-gray-800 active:bg-gray-200 transition-colors text-xs sm:text-sm whitespace-nowrap"
-          onClick={() => setShowAddListing(true)}
-        >
-          + Add Product
-        </button>
-          <div className="hidden sm:flex w-10 h-10 bg-gray-100 rounded-full flex-col items-center justify-center text-sm text-gray-600">ID</div>
+          <input placeholder="Search products, orders, customers" className="text-gray-500 border rounded-lg px-3 py-2 text-xs sm:text-sm w-full sm:flex-1 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200" />
+          <button
+            className="px-3 sm:px-4 py-2 bg-white border rounded-lg text-gray-800 hover:bg-gray-50 active:bg-gray-200 transition-colors text-xs sm:text-sm whitespace-nowrap font-medium"
+            onClick={() => setShowAddListing(true)}
+          >
+            + Add Product
+          </button>
+          <div className="hidden sm:flex w-10 h-10 bg-gray-100 rounded-full flex-col items-center justify-center text-sm text-gray-600 flex-shrink-0">ID</div>
         </div>
       </div>
 
