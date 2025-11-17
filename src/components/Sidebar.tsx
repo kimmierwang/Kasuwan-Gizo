@@ -44,10 +44,10 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
   return (
     <>
       {/* Mobile Menu Button */}
-      <div className="md:hidden fixed top-4 left-4 z-50">
+      <div className="md:hidden fixed top-3 sm:top-4 left-3 sm:left-4 z-50">
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="p-2 rounded-lg bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 transition"
+          className="p-2 sm:p-2.5 rounded-lg bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 transition active:scale-95"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <RiCloseLine size={24} /> : <RiMenuLine size={24} />}
@@ -59,16 +59,17 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
         <div
           className="md:hidden fixed inset-0 bg-black/50 z-30 top-0"
           onClick={() => setMobileOpen(false)}
+          aria-hidden="true"
         />
       )}
 
       {/* Sidebar */}
-      <aside className={`fixed top-0 left-0 h-screen w-64 bg-white border-r border-gray-100 flex-col overflow-y-auto z-40 transition-transform duration-300 ${
+      <aside className={`fixed top-0 left-0 h-screen w-64 bg-white border-r border-gray-100 flex flex-col overflow-y-auto z-40 transition-transform duration-300 ${
         mobileOpen ? 'translate-x-0' : '-translate-x-full'
-      } md:translate-x-0 md:flex hidden md:block`}>
-        <div className="px-4 py-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-white">
+      } md:translate-x-0 md:static md:translate-x-0`}>
+        <div className="px-4 py-6 flex items-center justify-between">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-white flex-shrink-0">
               <img
                 src="/images/logos.png"
                 alt="Logo"
@@ -76,8 +77,16 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
               />
             </div>
 
-            <span className="text-lg font-semibold text-gray-900">Kasuwan Gizo</span>
+            <span className="text-lg font-semibold text-gray-900 truncate">Kasuwan Gizo</span>
           </div>
+          {/* Mobile close button inside sidebar */}
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="md:hidden p-1 text-gray-500 hover:text-gray-700 transition flex-shrink-0"
+            aria-label="Close menu"
+          >
+            <RiCloseLine size={20} />
+          </button>
         </div>
 
         <nav className="flex-1 px-2 py-4 overflow-y-auto">
@@ -87,7 +96,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                 pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href + "/"));
 
               const classes =
-                `group flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors ` +
+                `group flex items-center gap-3 px-4 py-3 rounded-lg text-xs sm:text-sm font-medium transition-all active:scale-95 ` +
                 (isActive
                   ? "bg-gradient-to-r from-green-600 to-yellow-500 hover:from-purple-700 hover:to-pink-700 text-white shadow-sm"
                   : "text-gray-700 hover:bg-gray-50");
@@ -96,17 +105,17 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                 <li key={item.label}>
                   {forceFullNav ? (
                     <a href={item.href} className={classes} onClick={handleMobileNavClick}>
-                      <span className="w-5 h-5 text-gray-500 group-hover:text-gray-700 flex items-center justify-center">
+                      <span className="w-5 h-5 text-gray-500 group-hover:text-gray-700 flex items-center justify-center flex-shrink-0">
                         {getIcon(item.icon)}
                       </span>
-                      <span className="flex-1">{item.label}</span>
+                      <span className="flex-1 truncate">{item.label}</span>
                     </a>
                   ) : (
                     <Link href={item.href} className={classes} onClick={handleMobileNavClick}>
-                      <span className="w-6 h-6 text-gray-500 group-hover:text-gray-700 flex items-center justify-center">
+                      <span className="w-5 h-5 text-gray-500 group-hover:text-gray-700 flex items-center justify-center flex-shrink-0">
                         {getIcon(item.icon)}
                       </span>
-                      <span className="flex-1">{item.label}</span>
+                      <span className="flex-1 truncate">{item.label}</span>
                     </Link>
                   )}
                 </li>
@@ -116,11 +125,11 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
         </nav>
 
         <div className="px-4 py-4 border-t border-gray-100">
-          <div className="flex items-center gap-3">
-            <img src={avatar} alt="avatar" className="w-10 h-10 rounded-full object-cover" />
-            <div>
-              <div className="text-sm font-semibold text-gray-700">John Doe</div>
-              <div className="text-xs text-gray-500">Business Owner</div>
+          <div className="flex items-center gap-3 min-w-0">
+            <img src={avatar} alt="avatar" className="w-10 h-10 rounded-full object-cover flex-shrink-0" />
+            <div className="min-w-0 flex-1">
+              <div className="text-xs sm:text-sm font-semibold text-gray-700 truncate">John Doe</div>
+              <div className="text-xs text-gray-500 truncate">Business Owner</div>
             </div>
           </div>
         </div>

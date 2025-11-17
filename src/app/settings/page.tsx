@@ -221,32 +221,32 @@ export default function SettingsPage() {
   ];
 
   return (
-    <div className="settings-page bg-gray-50 min-h-screen p-4 sm:p-6">
+    <div className="settings-page bg-gray-50 min-h-screen p-3 sm:p-4 md:p-6">
       <div className="max-w-6xl mx-auto">
-        <div className="settings-header mb-8 sm:mb-12">
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">Settings & Preferences</h1>
-          <p className="text-xs sm:text-sm text-gray-600 mt-2 max-w-2xl">
+        <div className="settings-header mb-6 sm:mb-8 md:mb-12">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Settings & Preferences</h1>
+          <p className="text-xs sm:text-sm text-gray-600 mt-2 max-w-2xl leading-relaxed">
             Customize your account, business profile, and how you interact with the platform. All changes are saved automatically.
           </p>
         </div>
 
         {saved && (
-          <div className="mb-6 p-3 sm:p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-xs sm:text-sm flex items-center gap-2">
-            <span>✓</span> All changes saved successfully
+          <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-green-50 border border-green-200 rounded-lg text-green-700 text-xs sm:text-sm flex items-center gap-2">
+            <span className="flex-shrink-0">✓</span> <span>All changes saved successfully</span>
           </div>
         )}
 
-        <div className="space-y-8 sm:space-y-10">
+        <div className="space-y-6 sm:space-y-8 md:space-y-10">
           {settingGroups.map((group) => (
             <section key={group.name} className="settings-group">
               <div className="mb-4 sm:mb-5 flex items-center gap-3">
                 <div className={`w-1 h-8 rounded-full bg-gradient-to-b ${group.color}`}></div>
                 <div>
-                  <h2 className="text-lg sm:text-xl font-semibold text-gray-900">{group.name}</h2>
+                  <h2 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900">{group.name}</h2>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5">
                 {group.cards.map((card) => (
                   <button
                     key={card.id}
@@ -283,48 +283,48 @@ export default function SettingsPage() {
               {activeSection && (
                 <div className="mt-6 p-6 bg-white rounded-lg border border-gray-200 shadow-sm">
                   {activeSection === "profile" && (
-                    <div className="space-y-4">
-                      <h3 className="text-lg font-semibold text-gray-900">Personal Information</h3>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-3 sm:space-y-4">
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900">Personal Information</h3>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
                         <input
                           type="text"
                           placeholder="First Name"
                           value={profile.firstName}
                           onChange={(e) => setProfile({ ...profile, firstName: e.target.value })}
-                          className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                          className="px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-400 outline-none"
                         />
                         <input
                           type="text"
                           placeholder="Last Name"
                           value={profile.lastName}
                           onChange={(e) => setProfile({ ...profile, lastName: e.target.value })}
-                          className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                          className="px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-400 outline-none"
                         />
                         <input
                           type="email"
                           placeholder="Email"
                           value={profile.email}
                           onChange={(e) => setProfile({ ...profile, email: e.target.value })}
-                          className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                          className="px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-400 outline-none"
                         />
                         <input
                           type="tel"
                           placeholder="Phone"
                           value={profile.phone}
                           onChange={(e) => setProfile({ ...profile, phone: e.target.value })}
-                          className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
+                          className="px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-400 outline-none"
                         />
                       </div>
-                      <div className="flex gap-3 justify-end pt-4">
+                      <div className="flex gap-2 sm:gap-3 justify-end pt-3 sm:pt-4">
                         <button
                           onClick={() => setActiveSection(null)}
-                          className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
+                          className="px-3 sm:px-4 py-2 text-xs sm:text-sm bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition font-medium"
                         >
                           Cancel
                         </button>
                         <button
                           onClick={handleSave}
-                          className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+                          className="px-3 sm:px-4 py-2 text-xs sm:text-sm bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition font-medium"
                         >
                           Save Changes
                         </button>
@@ -520,11 +520,11 @@ export default function SettingsPage() {
           ))}
         </div>
 
-        <div className="mt-12 pt-6 border-t border-gray-200 flex gap-3 justify-end">
-          <button className="px-6 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium">
+        <div className="mt-8 sm:mt-12 pt-4 sm:pt-6 border-t border-gray-200 flex flex-col sm:flex-row gap-2 sm:gap-3 justify-end">
+          <button className="px-4 sm:px-6 py-2 text-xs sm:text-sm bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium transition">
             Export Settings
           </button>
-          <button className="px-6 py-2 bg-gradient-to-r from-indigo-600 to-pink-600 text-white rounded-lg hover:opacity-90 font-medium">
+          <button className="px-4 sm:px-6 py-2 text-xs sm:text-sm bg-gradient-to-r from-indigo-600 to-pink-600 text-white rounded-lg hover:opacity-90 font-medium transition">
             Save All Changes
           </button>
         </div>
