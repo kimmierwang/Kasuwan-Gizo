@@ -67,9 +67,9 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
       <aside className={`fixed top-0 left-0 h-screen w-64 bg-white border-r border-gray-100 flex flex-col overflow-y-auto z-40 transition-transform duration-300 ${
         mobileOpen ? 'translate-x-0' : '-translate-x-full'
       } md:translate-x-0 md:static md:translate-x-0`}>
-        <div className="px-4 py-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-white">
+        <div className="px-4 py-6 flex items-center justify-between">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-white flex-shrink-0">
               <img
                 src="/images/logos.png"
                 alt="Logo"
@@ -77,8 +77,16 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
               />
             </div>
 
-            <span className="text-lg font-semibold text-gray-900">Kasuwan Gizo</span>
+            <span className="text-lg font-semibold text-gray-900 truncate">Kasuwan Gizo</span>
           </div>
+          {/* Mobile close button inside sidebar */}
+          <button
+            onClick={() => setMobileOpen(false)}
+            className="md:hidden p-1 text-gray-500 hover:text-gray-700 transition flex-shrink-0"
+            aria-label="Close menu"
+          >
+            <RiCloseLine size={20} />
+          </button>
         </div>
 
         <nav className="flex-1 px-2 py-4 overflow-y-auto">
