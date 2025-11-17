@@ -40,17 +40,17 @@ export default function NotificationsPage() {
 
   return (
     <div className="space-y-4 sm:space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-        <div>
-          <h1 className="text-xl sm:text-2xl font-semibold text-gray-700">Notifications</h1>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+        <div className="flex-1">
+          <h1 className="text-lg sm:text-2xl font-semibold text-gray-700">Notifications</h1>
           <p className="text-xs sm:text-sm text-gray-500">Stay updated with your business activities</p>
         </div>
-        <div className="flex items-center gap-3">
-          <button className="px-3 sm:px-4 py-2 border rounded text-xs sm:text-sm text-gray-700 whitespace-nowrap">Mark All Read</button>
+        <div className="flex-shrink-0">
+          <button className="px-3 sm:px-4 py-2 border rounded text-xs sm:text-sm text-gray-700 hover:bg-gray-50 transition whitespace-nowrap font-medium">Mark All Read</button>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 text-gray-500">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-4 text-gray-500">
         <StatCard title="Unread" value={4} color="red"/>
         <StatCard title="Viewed" value={2} color="blue" />
         <StatCard title="Shared" value={2} color="green" />
