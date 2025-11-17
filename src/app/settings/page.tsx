@@ -520,11 +520,11 @@ export default function SettingsPage() {
           ))}
         </div>
 
-        <div className="mt-12 pt-6 border-t border-gray-200 flex gap-3 justify-end">
-          <button className="px-6 py-2 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium">
+        <div className="mt-8 sm:mt-12 pt-4 sm:pt-6 border-t border-gray-200 flex flex-col sm:flex-row gap-2 sm:gap-3 justify-end">
+          <button className="px-4 sm:px-6 py-2 text-xs sm:text-sm bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium transition">
             Export Settings
           </button>
-          <button className="px-6 py-2 bg-gradient-to-r from-indigo-600 to-pink-600 text-white rounded-lg hover:opacity-90 font-medium">
+          <button className="px-4 sm:px-6 py-2 text-xs sm:text-sm bg-gradient-to-r from-indigo-600 to-pink-600 text-white rounded-lg hover:opacity-90 font-medium transition">
             Save All Changes
           </button>
         </div>
