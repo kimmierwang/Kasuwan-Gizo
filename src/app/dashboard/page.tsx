@@ -53,19 +53,19 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-4">
         {stats.map((s) => (
-          <div key={s.title} className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
-            <div className="flex items-center justify-between gap-2">
+          <div key={s.title} className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm hover:shadow-md transition-shadow">
+            <div className="flex items-center justify-between gap-2 mb-2">
               <div className="min-w-0 flex-1">
-                <div className="text-xs sm:text-sm text-gray-500 truncate">{s.title}</div>
+                <div className="text-xs sm:text-sm font-medium text-gray-500 truncate">{s.title}</div>
                 <div className="text-lg sm:text-xl font-semibold text-gray-800">{s.value}</div>
               </div>
-              <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg flex items-center justify-center bg-gray-50 flex-shrink-0">
-                <span className="text-xs sm:text-sm text-gray-400">💠</span>
+              <div className="w-8 sm:w-10 h-8 sm:h-10 rounded-lg flex items-center justify-center bg-gray-50 flex-shrink-0 text-sm">
+                💠
               </div>
             </div>
-            <div className="text-xs text-gray-700 mt-2">{s.change}</div>
+            <div className="text-xs text-gray-600">{s.change}</div>
           </div>
         ))}
       </div>
