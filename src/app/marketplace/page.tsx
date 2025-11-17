@@ -428,15 +428,15 @@ const categories = ['All Categories', 'Fashion & Accessories', 'Food & Beverages
 export default function MarketplacePage() {
   return (
     <div className="w-full bg-white">
-      <section className="bg-gradient-to-r from-emerald-500 to-emerald-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="bg-gradient-to-r from-emerald-500 to-emerald-900 text-white py-8 sm:py-12 lg:py-16 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-3 text-gray-200">Discover Amazing Products</h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8">Explore thousands of products from verified African businesses across different categories and locations</p>
+            <h1 className="text-2xl sm:text-3xl lg:text-5xl font-bold mb-2 sm:mb-3 text-gray-200 leading-tight">Discover Amazing Products</h1>
+            <p className="text-xs sm:text-sm lg:text-xl text-white/90 mb-4 sm:mb-8 leading-relaxed">Explore thousands of products from verified African businesses across different categories and locations</p>
             <div className="max-w-2xl mx-auto">
-              <div className="flex items-center bg-white rounded-lg overflow-hidden shadow-sm">
-                <input className="flex-1 px-4 py-3 text-gray-700" placeholder="Search products, businesses, or categories..." />
-                <button className="bg-emerald-600 text-white px-4 py-3">Search</button>
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center bg-white rounded-lg overflow-hidden shadow-sm gap-0">
+                <input className="flex-1 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base text-gray-700 placeholder-gray-500" placeholder="Search products, businesses, or categories..." />
+                <button className="bg-emerald-600 text-white px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-base font-medium whitespace-nowrap hover:bg-emerald-700 transition">Search</button>
               </div>
             </div>
           </div>
