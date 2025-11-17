@@ -106,45 +106,44 @@ export default function ProductsPage() {
         </Card>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
-        <input placeholder="Search products..." className="flex-1 border rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm text-gray-700" />
-        <select className="border rounded-lg px-3 sm:px-6 py-2 text-xs sm:text-sm text-gray-800">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-4">
+        <input placeholder="Search products..." className="flex-1 border rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm text-gray-700 placeholder-gray-400" />
+        <select className="border rounded-lg px-3 sm:px-4 py-2 text-xs sm:text-sm text-gray-800 bg-white hover:border-gray-300 transition">
           <option>Select</option>
           <option>Newly Added</option>
           <option>Lastly Added</option>
         </select>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
         {products.map((p) => (
-          <article key={p.id} className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm">
-            <div className="h-32 sm:h-40 rounded-md bg-gray-100 overflow-hidden mb-3">
+          <article key={p.id} className="bg-white border rounded-lg p-3 sm:p-4 shadow-sm hover:shadow-md transition-shadow">
+            <div className="h-28 sm:h-36 lg:h-40 rounded-md bg-gray-100 overflow-hidden mb-3 flex-shrink-0">
               <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
             </div>
-            <div className="flex items-start justify-between gap-2 sm:gap-3">
-              <div className="flex-1 min-w-0">
-                <div className="text-xs sm:text-sm font-semibold text-gray-700 truncate">{p.title}</div>
-                <div className="text-xs text-gray-500 truncate">{p.category}</div>
+            <div className="flex flex-col gap-2">
+              <div className="flex items-start justify-between gap-2 min-w-0">
+                <div className="flex-1 min-w-0">
+                  <div className="text-xs sm:text-sm font-semibold text-gray-700 truncate">{p.title}</div>
+                  <div className="text-xs text-gray-500 truncate">{p.category}</div>
+                </div>
+                <div className="flex-shrink-0">
+                  <span className={`px-1.5 sm:px-2 py-1 text-xs rounded-full font-medium whitespace-nowrap ${
+                    p.status === "Active" ? "bg-green-50 text-green-600" : p.status === "Out of Stock" ? "bg-red-50 text-red-600" : "bg-green-300 text-gray-600"
+                  }`}>
+                    {p.status}
+                  </span>
+                </div>
               </div>
-              <div className="flex-shrink-0">
-                <span className={`px-1.5 sm:px-2 py-1 text-xs rounded-full font-medium whitespace-nowrap ${
-                  p.status === "Active" ? "bg-green-50 text-green-600" : p.status === "Out of Stock" ? "bg-red-50 text-red-600" : "bg-green-300 text-gray-600"
-                }`}>
-                  {p.status}
-                </span>
+
+              <div className="space-y-1">
+                <div className="text-base sm:text-lg font-semibold text-gray-700">{p.price}</div>
+                <div className="text-xs text-gray-500">Stock: {p.stock}</div>
+                <div className="text-xs text-gray-400">{p.sold} sold</div>
               </div>
-            </div>
 
-            <div className="mt-3">
-              <div className="text-base sm:text-lg font-semibold text-gray-500">{p.price}</div>
-              <div className="text-xs text-gray-500 mt-1">Stock: {p.stock}</div>
-              <div className="text-xs text-gray-400">{p.sold} sold</div>
-            </div>
-
-            <div className="mt-4 flex items-center justify-between text-sm text-gray-500">
-              <div>⋯</div>
-              <div className="flex items-center gap-3">
-                <button className="text-xs text-gray-500">✎</button>
-                <button className="text-xs text-gray-500">🗑</button>
+              <div className="mt-2 flex items-center justify-between pt-2 border-t border-gray-100">
+                <button className="text-xs text-gray-500 hover:text-gray-700 transition">✎</button>
+                <button className="text-xs text-gray-500 hover:text-red-600 transition">🗑</button>
               </div>
             </div>
           </article>
