@@ -70,19 +70,19 @@ const products = [
 export default function ProductsPage() {
   return (
     <div className="space-y-4 sm:space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-semibold text-gray-700">Products & Inventory</h1>
+          <h1 className="text-lg sm:text-2xl font-semibold text-gray-700">Products & Inventory</h1>
           <p className="text-xs sm:text-sm text-gray-500">Manage your product catalog and inventory levels</p>
         </div>
-        <div className="flex items-center gap-3">
-          <Link href="/products/new" className="px-3 sm:px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 text-xs sm:text-sm whitespace-nowrap">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <Link href="/products/new" className="px-3 sm:px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition text-xs sm:text-sm whitespace-nowrap font-medium">
             + Add Product
           </Link>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4">
         <Card
           title="Total Products"
           value={<span className="text-gray-700">{products.length}</span>}
