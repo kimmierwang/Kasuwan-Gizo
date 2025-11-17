@@ -3,38 +3,38 @@ import React from "react";
 export default function ProfilePage() {
   return (
     <div className="space-y-4 sm:space-y-6">
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-3 sm:gap-4">
         <div>
-          <h1 className="text-xl sm:text-2xl font-semibold text-gray-700">Business Profile</h1>
+          <h1 className="text-lg sm:text-2xl font-semibold text-gray-700">Business Profile</h1>
           <p className="text-xs sm:text-sm text-gray-500">Manage your business information and public profile</p>
         </div>
       </div>
       <div className="bg-white border rounded-lg overflow-hidden">
-        <div className="h-32 sm:h-44 bg-gray-100 relative">
+        <div className="h-24 sm:h-36 lg:h-44 bg-gray-100 relative">
           <img
             src="/images/bg-image.jpg"
             alt="cover"
             className="w-full h-full object-cover"
           />
-          <div className="absolute -bottom-4 sm:-bottom-6 left-4 sm:left-6 flex items-center gap-3 sm:gap-4">
-            <div className="w-16 sm:w-20 h-16 sm:h-20 rounded-lg bg-white p-1 shadow-md flex items-center justify-center flex-shrink-0">
+          <div className="absolute -bottom-3 sm:-bottom-5 left-3 sm:left-6 flex items-center gap-2 sm:gap-4 flex-wrap">
+            <div className="w-14 sm:w-20 h-14 sm:h-20 rounded-lg bg-white p-1 shadow-md flex items-center justify-center flex-shrink-0">
               <img src="/images/apple.png" alt="logo" className="w-full h-full object-contain" />
             </div>
             <div className="bg-white rounded-full px-2 sm:px-3 py-1 text-xs sm:text-sm text-green-600 font-medium shadow whitespace-nowrap">Verified</div>
           </div>
         </div>
 
-        <div className="p-4 sm:p-6 pt-8 sm:pt-10">
-          <p className="text-xs sm:text-sm text-gray-700">We specialize in premium electronics, fashion, and lifestyle products. Our mission is to provide high-quality products with exceptional customer service.</p>
+        <div className="p-3 sm:p-6 pt-6 sm:pt-10">
+          <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">We specialize in premium electronics, fashion, and lifestyle products. Our mission is to provide high-quality products with exceptional customer service.</p>
         </div>
       </div>
 
       <div className="bg-white border rounded-lg p-4 sm:p-6">
-        <div className="flex items-center gap-3 mb-4 flex-wrap">
-          <button className="px-3 py-1 rounded-md bg-indigo-50 text-indigo-700 text-xs sm:text-sm font-medium">General Info</button>
+        <div className="flex items-center gap-2 sm:gap-3 mb-4 flex-wrap">
+          <button className="px-3 py-1 rounded-md bg-indigo-50 text-indigo-700 text-xs sm:text-sm font-medium hover:bg-indigo-100 transition">General Info</button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-6">
           <div className="space-y-4">
             <label className="block text-xs sm:text-sm text-gray-600">Business Name</label>
             <input className="w-full border rounded-lg px-3 py-2 text-xs sm:text-sm bg-gray-50 text-gray-400" defaultValue="Gizo Premium Store" />
